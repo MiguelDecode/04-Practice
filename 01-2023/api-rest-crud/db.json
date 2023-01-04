@@ -31,11 +31,6 @@
       "id": 9
     },
     {
-      "name": "Maria",
-      "constelacion": "Argonauta",
-      "id": 10
-    },
-    {
       "name": "Saga",
       "constelacion": "Geminis",
       "id": 11
@@ -44,6 +39,11 @@
       "name": "Paco",
       "constelacion": "Taberna",
       "id": 12
+    },
+    {
+      "name": "Shaka",
+      "constelacion": "Virgo",
+      "id": 17
     }
   ],
   "dioses": [
