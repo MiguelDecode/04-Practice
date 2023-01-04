@@ -57,6 +57,7 @@
       </tr>
     </template>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
       const $table = document.querySelector(".crud-table");
       const $form = document.querySelector(".crud-form");
@@ -64,8 +65,132 @@
       const $template = document.getElementById("crud-template").content;
       const $fragment = document.createDocumentFragment();
 
+      const getAll = async () => {
+        try {
+          let res = await axios.get("http://localhost:3000/santos");
+          let json = await res.data;
+
+          json.forEach((el) => {
+            $template.querySelector(".name").textContent = el.name;
+            $template.querySelector(".constellation").textContent =
+              el.constelacion;
+            $template.querySelector(".edit").dataset.id = el.id;
+            $template.querySelector(".edit").dataset.name = el.name;
+            $template.querySelector(".edit").dataset.constellation =
+              el.constelacion;
+            $template.querySelector(".delete").dataset.id = el.id;
+
+            let $clone = document.importNode($template, true);
+            $fragment.appendChild($clone);
+          });
+
+          $table.querySelector("tbody").appendChild($fragment);
+        } catch (error) {
+          let message = error.statusText || "Ocurrió un error";
+          $table.insertAdjacentHTML(
+            "afterend",
+            `<p><b>Error ${error.status}: ${message} `
+          );
+        }
+      };
 
       document.addEventListener("DOMContentLoaded", getAll);
+
+      document.addEventListener("submit", async (event) => {
+        if (event.target === $form) {
+          event.preventDefault();
+
+          if (!event.target.id.value) {
+            // Create - POST
+            try {
+              let options = {
+                method: "POST",
+                headers: {
+                  "Content-type": "application/json; charset=utf-8",
+                },
+                data: JSON.stringify({
+                  name: event.target.nombre.value,
+                  constelacion: event.target.constelacion.value,
+                }),
+              };
+              let res = await axios("http://localhost:3000/santos", options);
+              let json = await res.data;
+
+              location.reload();
+            } catch (error) {
+              let message = error.statusText || "Ocurrió un error";
+              $form.insertAdjacentHTML(
+                "afterend",
+                `<p><b>Error ${error.status}: ${message} `
+              );
+            }
+          } else {
+            // Update - PUT
+            try {
+              let options = {
+                method: "PUT",
+                headers: {
+                  "Content-type": "application/json; charset=utf-8",
+                },
+                data: JSON.stringify({
+                  name: event.target.nombre.value,
+                  constelacion: event.target.constelacion.value,
+                }),
+              };
+              let res = await axios(
+                `http://localhost:3000/santos/${event.target.id.value}`,
+                options
+              );
+              let json = await res.data;
+
+              location.reload();
+            } catch (error) {
+              let message = error.statusText || "Ocurrió un error";
+              $form.insertAdjacentHTML(
+                "afterend",
+                `<p><b>Error ${error.status}: ${message} `
+              );
+            }
+          }
+        }
+      });
+
+      document.addEventListener("click", async (event) => {
+        if (event.target.matches(".edit")) {
+          $title.textContent = "Editar Santo";
+          $form.nombre.value = event.target.dataset.name;
+          $form.constelacion.value = event.target.dataset.constellation;
+          $form.id.value = event.target.dataset.id;
+        }
+
+        if (event.target.matches(".delete")) {
+          let isDelete = confirm(
+            `Estás seguro de eleminar el id ${event.target.dataset.id}`
+          );
+
+          if (isDelete) {
+            // Delete - DELETE
+            try {
+              let options = {
+                method: "DELETE",
+                headers: {
+                  "Content-type": "application/json; charset=utf-8",
+                },
+              };
+              let res = await axios(
+                `http://localhost:3000/santos/${event.target.dataset.id}`,
+                options
+              );
+              let json = await res.data;
+
+              location.reload();
+            } catch (error) {
+              let message = error.statusText || "Ocurrió un error";
+              alert(`<p><b>Error ${error.status}: ${message} `);
+            }
+          }
+        }
+      });
     </script>
   </body>
 </html>
