@@ -1,0 +1,359 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* outline: 1px solid blue; */
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* START PROJECT */
+
+/* Variables */
+
+:root {
+  --clr-primary: hsl(4, 78%, 75%);
+}
+
+body {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.journal {
+  position: relative;
+  width: 100%;
+  width: min(100% - 1rem, 100rem);
+  height: 80rem;
+  border-radius: 1rem;
+  background-color: black;
+  padding: 8px 10px 8px;
+}
+
+.journal__pages {
+  display: flex;
+  overflow: hidden;
+  gap: 2rem;
+  position: relative;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background: linear-gradient(90deg, #fbfae8 15px, transparent 1%) center,
+    linear-gradient(#fbfae8 15px, transparent 1%) center, #ccc;
+  background-size: 16px 16px;
+}
+
+.page-left,
+.page-right {
+  width: 50%;
+  padding: 1rem;
+}
+
+.page-right {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "polaroid calendar calendar";
+}
+
+.journal__pages::after {
+  content: "";
+  width: 100px;
+  height: 100%;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    transparent 10%,
+    rgba(153, 153, 153, 0.05) 50%,
+    rgba(153, 153, 153, 0.4) 51%,
+    rgba(153, 153, 153, 0.15) 51.5%,
+    transparent 90%
+  );
+}
+
+.journal__title {
+  color: var(--clr-primary);
+  width: 100%;
+  background-color: transparent;
+  font-size: 5rem;
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
+}
+
+.journal__goals {
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid gray;
+  height: 3rem;
+  padding-left: 1rem;
+  box-shadow: 5px 5px 0 0 hsl(4, 78%, 75%, 0.5);
+  font-family: "Rock Salt", cursive;
+  margin-bottom: 5rem;
+}
+
+.goals__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* BOX GOAL */
+
+.box__goal {
+  position: relative;
+  border: 2px solid gray;
+  border-top: none;
+  box-shadow: 5px 5px 0 0 hsl(4, 78%, 75%, 0.5);
+  border-radius: 2px;
+  min-height: 5rem;
+  padding: 0.5rem;
+}
+
+.box__goal::before,
+.box__goal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 2px;
+  background-color: gray;
+}
+
+.box__goal::before {
+  left: 0;
+  width: 2rem;
+}
+
+.box__goal::after {
+  right: 0;
+  width: calc(100% - 8rem);
+}
+
+.box__input {
+  background-color: transparent;
+  border: 2px solid gray;
+  outline: none;
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin: 0;
+  z-index: 1;
+}
+
+.box__delete {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+}
+
+.box__title {
+  position: absolute;
+  font-size: 2rem;
+  font-family: "Permanent Marker", cursive;
+  transform: translateY(-2rem);
+  color: var(--clr-primary);
+  padding-left: 2.2rem;
+}
+
+.box__text {
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  font-family: "Rock Salt", cursive;
+}
+
+/* MARKERS */
+
+.mark {
+  position: absolute;
+  right: calc(-5.4rem);
+  width: 6rem;
+  height: 3rem;
+}
+
+.mark__one {
+  top: 10rem;
+  background-color: hsl(173, 58%, 39%);
+}
+
+.mark__two {
+  top: 14rem;
+  background-color: #e9c46a;
+}
+
+.mark__three {
+  top: 18rem;
+  background-color: #457b9d;
+}
+
+.mark__four {
+  top: 22rem;
+  background-color: #8ac926;
+}
+
+.mark__five {
+  top: 26rem;
+  background-color: #f72585;
+}
+
+.arrow-left {
+  width: 6rem;
+  height: 3rem;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-right: 10px solid #333;
+}
+
+/* UTILIES */
+
+.done {
+  background-image: url("./assets/done.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* POLAROID */
+
+.polaroid {
+  position: relative;
+  grid-area: polaroid;
+  background-color: #f9f9f9;
+  width: 18rem;
+  height: 24rem;
+  padding: 2rem 3rem 5rem 3rem;
+  transform: rotate(-10deg);
+  margin-top: -2rem;
+}
+
+.polaroid__date {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-family: "Rock Salt", cursive;
+  color: var(--clr-primary);
+}
+
+.polaroid__tape {
+  position: absolute;
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  z-index: 2;
+  transform: rotate(-2deg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: var(--clr-primary);
+  opacity: 0.8;
+}
+
+.polaroid__tape--top {
+  left: -2rem;
+  top: -1.3rem;
+}
+.polaroid__tape--bottom {
+  right: -2rem;
+  bottom: -1rem;
+}
+
+/* MINI CALENDAR */
+.calendar {
+  grid-area: calendar;
+  text-align: center;
+  font-family: "Rock Salt", cursive;
+  font-size: 3rem;
+  color: var(--clr-primary);
+}
+
+.calendar__list {
+  font-size: 1rem;
+  color: initial;
+  list-style-type: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 1rem;
+  border: 2px solid gray;
+  padding: 2rem;
+}
+
+.calendar__list li.active {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: var(--clr-primary);
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uploader con AJAX</title>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        font-size: 1rem;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <input type="file" name="files" id="files" multiple />
+    </main>
+    <script>
+      const $files = document.getElementById("files");
+      const $main = document.querySelector("main");
+
+      const uploader = (file) => {
+        // console.log(file);
+
+        const xhr = new XMLHttpRequest();
+        const formData = new FormData();
+
+        formData.append("file", file);
+
+        xhr.addEventListener("readystatechange", (event) => {
+          if (xhr.readyState !== 4) return;
+
+          if (xhr.status >= 200 && xhr.status < 300) {
+            console.log(xhr.responsetext);
+          } else {
+            let message = xhr.statusText || "Ocurrió un error";
+            console.error(`Error ${xhr.status}: ${message}`);
+          }
+        });
+
+        xhr.open("POST", "assets/uploader.php");
+
+        xhr.setRequestHeader("enc-type", "multipart/form-data");
+
+        xhr.send(formData);
+      };
+
+      document.addEventListener("change", (event) => {
+        if (event.target === $files) {
+          // console.log(event.target.files);
+
+          const files = Array.from(event.target.files);
+          files.forEach((file) => uploader(file));
+        }
+      });
+    </script>
+  </body>
+</html>
