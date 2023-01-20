@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.box {
+  width: 13rem;
+  height: 13rem;
+}
+
+.figma-logo {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+.red {
+  background-color: red;
+  border-radius: 50% 0 0 50%;
+}
+
+.orange {
+  background-color: orange;
+  border-radius: 0 50% 50% 0;
+}
+
+.purple {
+  background-color: purple;
+  border-radius: 50% 0 0 50%;
+}
+
+.blue {
+  background-color: blue;
+  border-radius: 50%;
+}
+
+.green {
+  background-color: green;
+  border-radius: 50% 0 50% 50%;
+}
