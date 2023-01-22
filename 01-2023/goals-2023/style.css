@@ -89,44 +89,32 @@ body {
   justify-content: center;
 }
 
+/* JOURNAL MAIN */
+
 .journal {
   position: relative;
-  width: 100%;
-  width: min(100% - 1rem, 100rem);
-  height: 80rem;
+  width: min(100% - 1rem, 90rem);
+  min-height: 90vh;
   border-radius: 1rem;
   background-color: black;
   padding: 8px 10px 8px;
 }
 
 .journal__pages {
-  display: flex;
-  overflow: hidden;
-  gap: 2rem;
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "page-one page-two";
+  gap: 4rem;
   padding: 2rem;
-  width: 100%;
-  height: 100%;
+  position: relative;
   border-radius: 1rem;
+  overflow: hidden;
   background: linear-gradient(90deg, #fbfae8 15px, transparent 1%) center,
     linear-gradient(#fbfae8 15px, transparent 1%) center, #ccc;
   background-size: 16px 16px;
 }
 
-.page-left,
-.page-right {
-  width: 50%;
-  padding: 1rem;
-}
-
-.page-right {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-areas: "polaroid calendar calendar";
-}
-
+/* This is the line in de middle of the page */
 .journal__pages::after {
   content: "";
   width: 100px;
@@ -146,16 +134,21 @@ body {
   );
 }
 
-.journal__title {
-  color: var(--clr-primary);
-  width: 100%;
-  background-color: transparent;
-  font-size: 5rem;
-  text-align: center;
-  font-family: "Permanent Marker", cursive;
+/* PAGE-ONE */
+
+.goals {
+  grid-area: page-one;
 }
 
-.journal__goals {
+.goals__title {
+  color: var(--clr-primary);
+  font-size: 3rem;
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
+  margin-bottom: 1rem;
+}
+
+.goals__input {
   width: 100%;
   background-color: transparent;
   border: 2px solid gray;
@@ -163,13 +156,31 @@ body {
   padding-left: 1rem;
   box-shadow: 5px 5px 0 0 hsl(4, 78%, 75%, 0.5);
   font-family: "Rock Salt", cursive;
-  margin-bottom: 5rem;
 }
 
 .goals__container {
   display: grid;
+  margin-top: 3rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+}
+
+/* PAGE-TWO */
+
+.page-two {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "polaroid calendar"
+    "notes notes"
+    "notes notes";
+  background-image: url(./assets/ballons.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position:  110% 35%;
 }
 
 /* BOX GOAL */
@@ -293,17 +304,30 @@ body {
 .polaroid {
   position: relative;
   grid-area: polaroid;
-  background-color: #f9f9f9;
-  width: 18rem;
-  height: 24rem;
-  padding: 2rem 3rem 5rem 3rem;
-  transform: rotate(-10deg);
-  margin-top: -2rem;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.2);
+  transition: all 0.35s ease-in-out;
+  z-index: 1;
+}
+
+.polaroid:hover {
+  transform: scale(1.5) rotate(10deg);
+}
+
+.polaroid:hover .polaroid__image {
+  filter: grayscale(0%);
+}
+
+.polaroid__image {
+  transition: all 0.35s ease-in-out;
+  filter: grayscale(100%);
 }
 
 .polaroid__date {
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
   font-family: "Rock Salt", cursive;
   color: var(--clr-primary);
 }
@@ -311,8 +335,8 @@ body {
 .polaroid__tape {
   position: absolute;
   content: "";
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   z-index: 2;
   transform: rotate(-2deg);
@@ -335,25 +359,55 @@ body {
   grid-area: calendar;
   text-align: center;
   font-family: "Rock Salt", cursive;
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: var(--clr-primary);
 }
 
 .calendar__list {
-  font-size: 1rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  place-content: center;
+  place-items: center;
+  font-size: 0.8rem;
   color: initial;
   list-style-type: none;
   padding-left: 0;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  row-gap: 1rem;
   border: 2px solid gray;
-  padding: 2rem;
+  padding: 1rem;
+  box-shadow: 5px 5px 0 0 hsl(4, 78%, 75%, 0.5);
+}
+
+.calendar__list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 .calendar__list li.active {
-  width: 2.2rem;
-  height: 2.2rem;
   border-radius: 50%;
   background-color: var(--clr-primary);
+}
+
+/* NOTES */
+.notes {
+  grid-area: notes;
+  width: 100%;
+}
+
+.notes__title {
+  text-align: center;
+  font-family: "Rock Salt", cursive;
+  font-size: 1.5rem;
+  color: var(--clr-primary);
+}
+
+.notes__line {
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--clr-primary);
+  margin-top: 2.5rem;
 }

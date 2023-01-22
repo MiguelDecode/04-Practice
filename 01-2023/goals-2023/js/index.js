@@ -36,7 +36,7 @@ document.addEventListener("click", (event) => {
 
   days.forEach((day) => {
     if (event.target === day) {
-      event.target.classList.add("active");
+      event.target.classList.toggle("active");
     }
   });
 });
