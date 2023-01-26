@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  background-color: #333;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.tacos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tacos > * {
+  flex: 1 1 200px;
+  margin: 1rem;
+}
+
+.taco {
+  background-color: crimson;
+  color: chartreuse;
+  font-size: 125%;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  padding: 1rem;
+  text-align: center;
+}
+
+.taco:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+
+.taco figcaption {
+  padding: 1rem;
+}
