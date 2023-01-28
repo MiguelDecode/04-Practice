@@ -1,3 +1,5 @@
+/* RESETS */
+
 /* Box sizing rules */
 *,
 *::before,
@@ -134,6 +136,14 @@ body {
   );
 }
 
+/* UTILIES */
+
+.done {
+  background-image: url("./assets/done.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /* PAGE-ONE */
 
 .goals {
@@ -163,24 +173,6 @@ body {
   margin-top: 3rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-}
-
-/* PAGE-TWO */
-
-.page-two {
-  display: grid;
-  place-items: center;
-  gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-areas:
-    "polaroid calendar"
-    "notes notes"
-    "notes notes";
-  background-image: url(./assets/ballons.png);
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position:  110% 35%;
 }
 
 /* BOX GOAL */
@@ -249,6 +241,24 @@ body {
   font-family: "Rock Salt", cursive;
 }
 
+/* PAGE-TWO */
+
+.page-two {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "polaroid calendar"
+    "notes notes"
+    "notes notes";
+  background-image: url(./assets/ballons.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 110% 35%;
+}
+
 /* MARKERS */
 
 .mark {
@@ -289,14 +299,6 @@ body {
   border-top: 25px solid transparent;
   border-bottom: 25px solid transparent;
   border-right: 10px solid #333;
-}
-
-/* UTILIES */
-
-.done {
-  background-image: url("./assets/done.png");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 /* POLAROID */
@@ -355,6 +357,7 @@ body {
 }
 
 /* MINI CALENDAR */
+
 .calendar {
   grid-area: calendar;
   text-align: center;
@@ -393,6 +396,7 @@ body {
 }
 
 /* NOTES */
+
 .notes {
   grid-area: notes;
   width: 100%;
