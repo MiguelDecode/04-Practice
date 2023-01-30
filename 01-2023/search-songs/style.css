@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.loader {
+  display: none;
+  margin-inline: auto;
+  filter: invert(1);
+}
+
+.song blockquote {
+  white-space: pre-wrap;
+}
+
+@media screen and (min-width: 50rem) {
+  .main {
+    flex-direction: row;
+  }
+
+  .main > * {
+    padding: 1rem;
+    flex-basis: 50%;
+  }
+}
