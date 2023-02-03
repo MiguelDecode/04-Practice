@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.loader {
+  display: none;
+  max-width: 100%;
+  margin-block: 2rem;
+  margin-inline: auto;
+}
+
+a {
+  color: #01579b;
+  transition: all 0.3s ease-out;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1 {
+  text-align: center;
+}
+
+hr {
+  border: thin solid #01579b;
+  margin: 3rem auto;
+  width: 80%;
+}
+
+.site {
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 50%;
+  text-align: center;
+}
+
+.post {
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 80%;
+  text-align: center;
+  background-color: #333;
+}
+
+.post-author img {
+  border-radius: 50%;
+}
+
+.post-date {
+  margin: 1rem auto;
+  display: block;
+}
+
+.post-excerpt,
+.post-categories,
+.post-tags,
+.post-content {
+  text-align-last: left;
+}
+
+.post-content summary {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.post-content > article {
+  padding: 1rem;
+  background-color: #333;
+}
+
+.post-content img {
+  display: block;
+  margin-inline: auto;
+}
+
