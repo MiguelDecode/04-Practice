@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+a {
+  color: #01579b;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00b0ff;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.loader {
+  display: block;
+  margin-inline: auto;
+  width: 6rem;
+  height: 6rem;
+}
+
+.error {
+  padding: 1rem;
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.form-search {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.form-search input {
+  display: block;
+  margin-inline: auto;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.header {
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  background-color: #fff;
+}
+
+.header > * {
+  margin: 1rem auto;
+}
+
+.post-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80%;
+  background-color: #eceff1;
+}
+
+.post-card p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-card img {
+  margin-inline: auto;
+}
+
+.grid-fluid {
+  margin: 1rem auto;
+  max-width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+}
