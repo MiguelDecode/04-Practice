@@ -1,45 +1,43 @@
 import { ajax } from "../helpers/ajax.js";
 import api from "../helpers/wp_api.js";
+import { Post } from "./Post.js";
 import { PostCard } from "./PostCard.js";
 
-export function Router() {
+export async function Router() {
   let { hash } = location;
-  const $posts = document.getElementById("posts");
+  const $main = document.getElementById("main");
 
-  console.log(hash);
+  // console.log(hash);
 
-  $posts.innerHTML = null;
+  $main.innerHTML = null;
 
   if (!hash || hash === "#/") {
-    ajax({
+    await ajax({
       url: api.POSTS,
       cbSuccess: (posts) => {
         // console.log(posts);
         let html = "";
 
         posts.forEach((post) => (html += PostCard(post)));
-        document.querySelector(".loader").style.display = "none";
-        $posts.innerHTML = html;
+        $main.innerHTML = html;
       },
     });
   } else if (hash.includes("#/search")) {
-    $posts.innerHTML = "<h2>Sección del Buscador</h2>";
+    $main.innerHTML = "<h2>Sección del Buscador</h2>";
   } else if (hash === "#/contact") {
-    $posts.innerHTML = "<h2>Sección del Contacto</h2>";
+    $main.innerHTML = "<h2>Sección del Contacto</h2>";
   } else {
-    $posts.innerHTML =
+    $main.innerHTML =
       "<h2>Aquí cargará el contenido del Post previamente seleccionado</h2>";
+
+    await ajax({
+      url: `${api.POST}?slug=${hash.slice(2)}`,
+      cbSuccess: (post) => {
+        // console.log(post);
+        $main.innerHTML = Post(post);
+      },
+    });
   }
 
-  ajax({
-    url: api.POSTS,
-    cbSuccess: (posts) => {
-      // console.log(posts);
-      let html = "";
-
-      posts.forEach((post) => (html += PostCard(post)));
-      document.querySelector(".loader").style.display = "none";
-      document.getElementById("posts").innerHTML = html;
-    },
-  });
+  document.querySelector(".loader").style.display = "none";
 }
