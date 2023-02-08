@@ -127,3 +127,9 @@ img {
 .post-page img {
   margin-inline: auto;
 }
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

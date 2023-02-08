@@ -24,6 +24,21 @@ export async function Router() {
     });
   } else if (hash.includes("#/search")) {
     $main.innerHTML = "<h2>Sección del Buscador</h2>";
+
+    await ajax({
+      url: `${api.SEARCH}${hash.slice(22)}`,
+      cbSuccess: (search) => {
+        const $results = document.createElement("div");
+        $results.classList.add("column");
+        search.forEach((post) => {
+          const $result = document.createElement("a");
+          $result.innerHTML = `<a href='${post.url}'>${post.title}</a>`;
+          $results.appendChild($result);
+        });
+        $main.innerHTML = "";
+        $main.appendChild($results);
+      },
+    });
   } else if (hash === "#/contact") {
     $main.innerHTML = "<h2>Sección del Contacto</h2>";
   } else {
