@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Crear un programa donde el usuario ingrese en un prompt la temperatura en Celcius y el programa muestre en una alerta la temperatura en Fahrenheit.
+
+      const toFahrenheit = () => {
+        const celsius = prompt(
+          "Introduce your temperature in Celsius to obtain his value in Fahrenheit"
+        );
+
+        if (isNaN(celsius)) {
+          alert("The value introduced is not a valid number");
+          return;
+        }
+
+        const fahrenheit = Number(celsius) * 1.8 + 32;
+
+        alert(`Your temperature ${celsius}C in fahrenheit is: ${fahrenheit}F`);
+      };
+
+      toFahrenheit();
+    </script>
+  </body>
+</html>
