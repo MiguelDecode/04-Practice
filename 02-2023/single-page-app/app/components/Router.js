@@ -1,5 +1,6 @@
 import { ajax } from "../helpers/ajax.js";
 import api from "../helpers/wp_api.js";
+import { ContactForm } from "./ContactForm.js";
 import { Post } from "./Post.js";
 import { PostCard } from "./PostCard.js";
 
@@ -28,19 +29,22 @@ export async function Router() {
     await ajax({
       url: `${api.SEARCH}${hash.slice(22)}`,
       cbSuccess: (search) => {
-        const $results = document.createElement("div");
-        $results.classList.add("column");
-        search.forEach((post) => {
-          const $result = document.createElement("a");
-          $result.innerHTML = `<a href='${post.url}'>${post.title}</a>`;
-          $results.appendChild($result);
-        });
         $main.innerHTML = "";
-        $main.appendChild($results);
+        const $list = document.createElement("ul");
+
+        search.forEach((result) => {
+          const $link = document.createElement("li");
+
+          $link.innerHTML = `<a href='${result.url}'>${result.title}</a>`;
+
+          $list.appendChild($link);
+        });
+
+        $main.appendChild($list);
       },
     });
   } else if (hash === "#/contact") {
-    $main.innerHTML = "<h2>Sección del Contacto</h2>";
+    $main.appendChild(ContactForm());
   } else {
     $main.innerHTML =
       "<h2>Aquí cargará el contenido del Post previamente seleccionado</h2>";

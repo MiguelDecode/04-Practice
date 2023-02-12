@@ -4,12 +4,6 @@ export function PostCard(props) {
     ? _embedded["wp:featuredmedia"][0].source_url
     : "./app/assets/favicon.png";
 
-  // document.addEventListener("click", (event) => {
-  //   if (!event.target.matches(".post-card a")) return false;
-
-  //   console.log(event.target);
-  // });
-
   return `
   <article class='post-card'>
     <img src='${urlPoster}' alt='${title.rendered}'>
