@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Crear un programa que determine si un número introducido en un popup es divisible por 11 y 5 o no, mostrar el resultado con console.log
+
+      const dividable = () => {
+        let num = prompt("Insert a number");
+
+        if (isNaN(num)) {
+          alert("The number introduced isn't valid");
+          return;
+        }
+
+        if (num % 5 === 0 && num % 11 === 0) {
+          alert("The number is dividable by 5 and 11");
+        } else {
+          alert("The number isn't dividable by 5 and 11");
+        }
+      };
+
+      dividable();
+    </script>
+  </body>
+</html>

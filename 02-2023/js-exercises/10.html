@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Crear un programa que determine si un string introducido por un usuario empieza con un número o con una letra.
+
+      const letters = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+      ];
+
+      const letterOrNumber = () => {
+        let value = prompt("Insert a sentence with letters and numbers");
+
+        console.log(value[0]);
+
+        if (!isNaN(value[0])) {
+          console.log(`${value[0]} is a number`);
+          return;
+        }
+
+        if (letters.includes(value[0])) {
+          console.log(`${value[0]} is a letter`);
+          return;
+        }
+
+        return console.log("The first value isn't a number or a letter");
+      };
+
+      letterOrNumber();
+    </script>
+  </body>
+</html>

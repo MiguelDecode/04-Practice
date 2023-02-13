@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Crear un programa que determine si un número introducido en un Prompt es divisible por 5 o no, mostrar el resultado con console.log
+
+      const isDivideByFive = () => {
+        let num = prompt("Insert a number to know if is dividable by 5");
+
+        if (isNaN(num)) {
+          alert(`${num} isn't a valid value`);
+          return;
+        }
+
+        console.log(typeof num);
+
+        if (Number(num) % 5 === 0) {
+          alert(`${num} is a number dividable by 5`);
+        } else {
+          alert(`${num} isn't a number dividable by 5`);
+        }
+      };
+
+      isDivideByFive();
+    </script>
+  </body>
+</html>
