@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Pedir al usuario que ingrese un número en un prompt, hacer la suma de todos los dígitos, validar que el número ingresado no contenga letras.
+
+      const addNumbers = () => {
+        let num = prompt("Introduce a number to add her numbers");
+
+        if (isNaN(num)) {
+          console.log("You don't introduce a valid value as a number");
+          return;
+        }
+
+        if (Math.sign(num) === -1) {
+          console.log("Please enter a positive number");
+          return;
+        } else if (Math.sign(num) === 0) {
+          console.log("Please don't enter a zero as a number");
+          return;
+        }
+
+        let total = 0;
+
+        for (let i = 0; i < num.length; i++) {
+          total += Number(num[i]);
+        }
+
+        console.log(total);
+      };
+
+      addNumbers();
+    </script>
+  </body>
+</html>
