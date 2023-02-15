@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Escribir un programa JavaScript en el que el programa escoge al azar un entero entre 1 y 10, el usuario , luego a el usuario se le pedirá que introduzca un número en un popup para intentar adivinarlo. Si la entrada del usuario coincide con el número de conjetura, el programa mostrará un mensaje de "buen trabajo" de lo contrario mostrará un mensaje de "No corresponde"
+
+      const match = () => {
+        const random = Math.round(Math.random() * (10 - 1) + 1);
+
+        let clientNum = prompt(
+          "Introduce a number between 1 and 10 and we try to guess"
+        );
+
+        if (clientNum < 1 || clientNum > 10) {
+          console.log("Your number must be between 1 and 10");
+          return;
+        }
+
+        if (isNaN(clientNum)) {
+          console.log("Introduce a valid value as a number");
+          return;
+        }
+
+        if (random === Number(clientNum)) {
+          console.log("Good Job, you match the correct number");
+        } else {
+          console.log("More luck another time");
+        }
+
+        console.log(random, clientNum);
+      };
+
+      match();
+    </script>
+  </body>
+</html>
