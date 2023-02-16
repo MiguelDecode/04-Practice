@@ -25,14 +25,18 @@
   </head>
   <body>
     <main class="card">
-      <article class="card__picture">
+      <picture class="card__picture">
+        <source
+          media="(max-width: 60rem)"
+          srcset="./images/image-header-mobile.jpg"
+        />
         <img
           class="card__img"
-          src="./images/image-header-mobile.jpg"
-          alt="People working with computers "
+          src="./images/image-header-desktop.jpg"
+          alt="People working with computers"
+          loading="lazy"
         />
-        <div class="card__fade"></div>
-      </article>
+      </picture>
 
       <article class="card__description">
         <h1 class="card__title">
