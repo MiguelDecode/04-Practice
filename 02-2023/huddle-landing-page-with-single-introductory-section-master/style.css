@@ -1,0 +1,150 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* START PROJECT */
+:root {
+  --violet: hsl(257, 40%, 49%);
+  --soft-magenta: hsl(300, 69%, 71%);
+}
+
+body {
+  background-image: url("./images/bg-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--violet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.main {
+  width: min(100% - 3rem, 40rem);
+  margin-inline: auto;
+}
+
+.logo {
+  margin-block: 1.5rem;
+  width: 50%;
+  max-width: 20rem;
+}
+
+.info {
+  text-align: center;
+  color: white;
+  margin-block: 4rem;
+}
+
+.info__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.3rem;
+}
+
+.info__description {
+  font-size: 1.5rem;
+}
+
+.register {
+  padding-block: 1rem;
+  width: 50%;
+  font-size: 1.5rem;
+  border-radius: 100vh;
+  border: none;
+  color: var(--violet);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.register:hover {
+  background-color: var(--soft-magenta);
+  color: white;
+  box-shadow: 0px 0px 15px 5px hsla(0, 0%, 0%, 0.5);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.5rem;
+}
+
+.social__li {
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease-in-out;
+  padding: 1rem;
+}
+
+.social__li:hover {
+  border-color: var(--soft-magenta);
+}
+
+.social__li:hover .social__icon {
+  color: var(--soft-magenta);
+}
+
+.social__icon {
+  color: white;
+  transition: color 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 48rem) {
+  body {
+    background-image: url("./images/bg-desktop.svg");
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: min-content 1fr min-content;
+    gap: 3rem;
+    place-items: center;
+    grid-template-areas:
+      "logo logo"
+      "mockup info"
+      "social social";
+
+    width: min(100% - 3rem, 90rem);
+  }
+
+  .logo {
+    grid-area: logo;
+    justify-self: flex-start;
+  }
+
+  .mockup {
+    grid-area: mockup;
+  }
+
+  .info {
+    grid-area: info;
+    text-align: left;
+  }
+
+  .social {
+    grid-area: social;
+    justify-self: flex-end;
+  }
+}
