@@ -3,7 +3,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  outline: 1px dotted red;
+  /* outline: 1px dotted red; */
 }
 
 /* Remove default margin */
@@ -103,8 +103,9 @@ body {
 }
 
 .card {
-  width: min(100%, 30rem);
+  max-width: min(100%, 30rem);
   margin-inline: auto;
+  border-radius: 1rem;
 }
 
 /* SCORE SECTION */
@@ -212,10 +213,45 @@ body {
 
 .summary__btn {
   width: 100%;
+  margin-top: 2rem;
   background-color: var(--dark-gray-blue);
   color: var(--white);
   font-weight: var(--fw-extra-bold);
   font-size: 1.2rem;
   padding-block: 1rem;
   border-radius: 100vh;
+  cursor: pointer;
+  border: none;
+}
+
+.summary__btn:hover {
+  background: linear-gradient(var(--clr-bg1), var(--clr-bg2));
+}
+
+@media screen and (min-width: 29.5rem) {
+  body {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    max-width: min(100%, 60rem);
+    box-shadow: 5px 5px 15px 5px hsla(0, 0%, 0%, 0.1);
+  }
+
+  .score {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+  }
+
+  .summary {
+    padding: 2rem;
+  }
 }
