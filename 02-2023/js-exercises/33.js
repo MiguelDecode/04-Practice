@@ -4,7 +4,7 @@
 // ***
 // *
 
-const halfPiramid2 = (num) => {
+const halfPyramid2 = (num) => {
   let line = "";
 
   for (let i = num * 2; i >= 0; i--) {
@@ -16,4 +16,4 @@ const halfPiramid2 = (num) => {
   return line;
 };
 
-console.log(halfPiramid2(5));
+console.log(halfPyramid2(5));
