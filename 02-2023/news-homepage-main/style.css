@@ -5,7 +5,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  outline: 1px dotted red;
+  /* outline: 1px dotted red; */
 }
 
 /* Remove default margin */
@@ -95,16 +95,23 @@ select {
 body {
   font-family: "Inter", sans-serif;
   font-size: 0.9375rem;
-  padding: 5vw;
-
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  place-content: center;
+  color: var(--neutral-four);
+}
+
+.grid-container {
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(2, 1fr) 350px;
   grid-template-rows: min-content 4fr 1fr;
   grid-template-areas:
     "header header header"
     "main main news"
     "main main news"
     "trending trending trending";
+  width: min(100% - 2rem, 90rem);
+  margin-inline: auto;
 }
 
 /* HEADER */
@@ -126,16 +133,110 @@ body {
 
 .nav__link {
   text-decoration: none;
+  color: var(--neutral-three);
+  font-size: 1.1rem;
 }
+
+/* MAIN */
 
 .main {
   grid-area: main;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr min-content min-content;
+  grid-template-areas:
+    "image image"
+    "title text"
+    "title button";
 }
+
+.main__img {
+  grid-area: image;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main__title {
+  grid-area: title;
+  font-size: 3rem;
+}
+
+.main__text {
+  color: var(--neutral-three);
+}
+
+.more-info {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background-color: var(--primary-two);
+  align-self: flex-end;
+  justify-self: start;
+  color: var(--neutral-one);
+  font-weight: var(--fw-extra-bold);
+  letter-spacing: 8px;
+}
+
+/* NEWS */
 
 .news {
   grid-area: news;
+  padding: 1rem;
+  background-color: var(--neutral-four);
 }
+
+.news__title {
+  margin-block: 1rem;
+  color: var(--primary-one);
+  font-size: 2.5rem;
+}
+
+.news__subtitle {
+  color: var(--neutral-one);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: var(--fw-bold);
+}
+
+.news__text {
+  color: var(--neutral-two);
+  margin-bottom: 2rem;
+}
+
+/* TRENDING */
 
 .trending {
   grid-area: trending;
+  display: flex;
+  gap: 2rem;
+}
+
+.trending__post {
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    "image number"
+    "image title"
+    "image text";
+}
+
+.trending__image {
+  grid-area: image;
+  max-width: 150px;
+  max-height: 200px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trending__title {
+  color: var(--neutral-three);
+  font-size: 3rem;
+  font-weight: var(--fw-extra-bold);
+}
+
+.trending__text {
+  color: var(--neutral-three);
 }
