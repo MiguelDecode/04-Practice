@@ -27,6 +27,11 @@
       <header class="header">
         <img src="./assets/images/logo.svg" alt="Logo" class="logo" />
         <nav class="nav">
+          <img
+            src="./assets/images/icon-menu.svg"
+            alt="Menu Icon"
+            class="nav__menu"
+          />
           <ul class="nav__list">
             <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
             <li class="nav__item"><a href="#" class="nav__link">New</a></li>
@@ -42,11 +47,17 @@
       </header>
 
       <article class="main">
-        <img
-          src="./assets/images/image-web-3-desktop.jpg"
-          alt="Geometrical forms"
-          class="main__img"
-        />
+        <picture class="main__picture">
+          <source
+            media="(max-width: 1000px)"
+            srcset="./assets/images/image-web-3-mobile.jpg"
+          />
+          <img
+            class="main__img"
+            src="./assets/images/image-web-3-desktop.jpg"
+            alt="Geometrical forms"
+          />
+        </picture>
         <h2 class="main__title">The Bright Future of Web 3.0?</h2>
         <p class="main__text">
           We dive into the next evolution of the web that claims to put the
