@@ -1,0 +1,12 @@
+.counter {
+  min-width: 18.75rem;
+  height: 18.75rem;
+  font-size: 10rem;
+  padding: 1.5625rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5rem solid white;
+  margin-bottom: 1rem;
+}
