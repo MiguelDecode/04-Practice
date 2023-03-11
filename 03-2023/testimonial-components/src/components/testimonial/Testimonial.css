@@ -1,0 +1,47 @@
+.testimonial {
+  background-color: white;
+  width: 73.125rem;
+  height: 23rem;
+  margin: 0.625rem 0.625rem 3.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 13px 1px rgb(0 0 0 / 9%);
+}
+
+.testimonial__image {
+  height: 100%;
+  width: auto;
+}
+
+.testimonial__data {
+  text-align: center;
+  padding: 2.5rem;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.testimonial__person {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.testimonial__person--bold{
+  font-weight: 700;
+}
+
+.testimonial__job {
+  font-size: 1.3rem;
+  margin-top: 0.9375rem;
+  padding-bottom: 1.875rem;
+  font-weight: 400;
+}
+
+.testimonial__company--bold {
+  font-weight: 700;
+}
+
+.testimonial__text {
+  text-align: justify;
+}
