@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #333;
+  color: white;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: "Shadows Into Light", cursive;
+  background-image: url("https://img.freepik.com/free-vector/animal-pattern-background-colorful-seamless-line-art-design-vector_53876-151381.jpg?w=996&t=st=1678826817~exp=1678827417~hmac=bac8f71197f2d609a710715229bb6d099cea63dcc993da630c9623989fe14ef3");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main {
+  background-color: #333;
+  padding: 4rem;
+  border-radius: 2rem;
+  letter-spacing: 2px;
+}
+
+.header__title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.header__subtitle {
+  margin-top: 0;
+  text-align: center;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  letter-spacing: 2px;
+}
+
+input {
+  min-height: 2rem;
+  padding-left: 1rem;
+  border-radius: 0.3rem;
+}
+
+label {
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.pet-select {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  letter-spacing: 2px;
+  min-height: 2rem;
+  border-radius: 0.3rem;
+}
+
+textarea {
+  resize: none;
+  margin: 2rem auto;
+  border-radius: 0.3rem;
+  padding: 1rem;
+}
+
+.submit {
+  display: block;
+  font-size: 1.5rem;
+  padding: 12px 24px;
+  width: 50%;
+  margin: 2rem auto;
+  border-radius: 0.3rem;
+  font-family: inherit;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline;
+  vertical-align: middle;
+  width: unset;
+}

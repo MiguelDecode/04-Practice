@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>freeCodeCamp Encuesta</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <h1 id="title" class="header__title">Protectora freeCodeCamp</h1>
+        <p id="description" class="header__subtitle">
+          Estas buscando un amigo para toda la vida?
+        </p>
+      </header>
+
+      <form action="#" id="survey-form">
+        <label for="name" id="name-label"
+          >Nombre
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            placeholder="Ingresa tu nombre de usuario"
+          />
+        </label>
+
+        <label for="email" id="email-label"
+          >Email
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Ingresa tu correo electrónico"
+            required
+        /></label>
+
+        <label for="number" id="number-label"
+          >Edad(Opcional)
+          <input
+            type="number"
+            name="number"
+            id="number"
+            min="13"
+            max="120"
+            placeholder="Ingresa tu edad"
+        /></label>
+
+        <label for="pet" class="pet"
+          >Que mascota prefieres adoptar
+          <select name="pet" id="dropdown" class="pet-select">
+            <option value="default">Escoge una mascota</option>
+            <option value="dog">Perro</option>
+            <option value="cat">Gato</option>
+            <option value="bird">Pajaro</option>
+            <option value="lizard">Lagarto</option>
+            <option value="other">Otro</option>
+          </select>
+        </label>
+
+        <h2>Recomendarias nuestra protectora a un amigo?</h2>
+        <label for="recommend" class="recommend">
+          <input
+            type="radio"
+            name="recommend"
+            value="definitely"
+          />Definitivamente
+          <input type="radio" name="recommend" value="maybe" />Quizas
+          <input type="radio" name="recommend" value="not-sure" />No lo creo
+          <input type="radio" name="recommend" value="unknow" />Mejor no
+        </label>
+
+        <h2>Cual es la personalidad que crees que te identifica mejor?</h2>
+        <label for="personality" class="personality">
+          <input
+            type="checkbox"
+            name="playful"
+            id="personality"
+            value="playful"
+          />Juguetón
+          <input
+            type="checkbox"
+            name="loyal"
+            id="personality"
+            value="loyal"
+          />Leal
+          <input
+            type="checkbox"
+            name="intelligent"
+            id="personality"
+            value="intelligent"
+          />Intelligente
+          <input
+            type="checkbox"
+            name="independent"
+            id="personality"
+            value="independent"
+          />Independiente
+        </label>
+
+        <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+
+        <button id="submit" class="submit">Enviar</button>
+      </form>
+    </main>
+  </body>
+</html>
