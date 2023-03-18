@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation of Box Model</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="main-doc">
+      <nav id="navbar">
+        <header>
+          <h2>Box Model</h2>
+        </header>
+        <a href="#intro" class="nav-link">Introduccion</a>
+        <a href="#content" class="nav-link">Content</a>
+        <a href="#padding" class="nav-link">Padding</a>
+        <a href="#border" class="nav-link">Border</a>
+        <a href="#margin" class="nav-link">Margin</a>
+        <a href="#outline" class="nav-link">Outline</a>
+      </nav>
+
+      <article>
+        <h1>Box Model</h1>
+        <section class="main-section" id="introduccion">
+          <header>
+            <h2>Introduccion</h2>
+          </header>
+          <p>
+            En CSS, el "content box" se refiere a la caja que contiene el
+            contenido de un elemento HTML, como un texto, una imagen o un vídeo.
+          </p>
+          <p>
+            Cada elemento HTML tiene un modelo de caja, que se compone de cuatro
+            partes principales: el contenido (content), el padding, el borde
+            (border) y el margen (margin). El content box es la parte más
+            interna de la caja, y es el área que contiene el contenido real del
+            elemento.
+          </p>
+          <h3>Partes del Box Model</h3>
+          <ol>
+            <li>Content</li>
+            <li>Padding</li>
+            <li>Border</li>
+            <li>Margin</li>
+            <li>Outline</li>
+          </ol>
+        </section>
+        <section class="main-section" id="content">
+          <header>
+            <h2>Content</h2>
+          </header>
+          <p>
+            Puedes controlar el tamaño del content box usando las propiedades de
+            CSS como "width" y "height", y puedes ajustar la posición del
+            contenido dentro de la caja utilizando las propiedades de "padding"
+            y "margin". También puedes aplicar estilos adicionales a la caja del
+            contenido, como fondos y bordes, usando las propiedades
+            correspondientes.
+          </p>
+          <p>
+            En resumen, el content box es la parte interna de la caja de un
+            elemento HTML que contiene su contenido real, y es una parte
+            fundamental del modelo de caja en CSS.
+          </p>
+          <code> .box { width: 1rem; heigth: 1rem; } </code>
+        </section>
+        <section class="main-section" id="padding">
+          <header>
+            <h2>Padding</h2>
+          </header>
+          <p>
+            En CSS, el "padding" (relleno) se refiere al espacio en blanco que
+            se encuentra entre el contenido de un elemento y su borde (border).
+            El padding se puede aplicar a cualquier elemento HTML, incluyendo
+            cajas de texto, imágenes y otros elementos de página.
+          </p>
+          <p>
+            El padding se puede configurar utilizando las propiedades de CSS
+            "padding-top", "padding-right", "padding-bottom" y "padding-left",
+            que definen la cantidad de espacio en blanco que se agrega a cada
+            lado del contenido de un elemento. Estas propiedades se pueden
+            establecer en valores específicos, como píxeles o porcentajes, o se
+            pueden establecer con valores "auto" o "inherit".
+          </p>
+          <p>
+            Al agregar padding a un elemento, puedes ajustar la cantidad de
+            espacio en blanco entre el contenido y el borde del elemento, lo que
+            puede ayudar a mejorar la legibilidad del contenido, así como a
+            mejorar el diseño visual de la página. Por ejemplo, puedes agregar
+            padding a un botón para hacer que el texto dentro del botón se
+            destaque más y sea más fácil de leer.
+          </p>
+          <p>
+            En resumen, el padding es el espacio en blanco que se encuentra
+            entre el contenido de un elemento HTML y su borde, y se puede
+            configurar utilizando las propiedades de CSS correspondientes para
+            ajustar el diseño y la legibilidad del contenido en la página.
+          </p>
+          <code>.box { padding: 1rem;} </code>
+        </section>
+        <section class="main-section" id="border">
+          <header>
+            <h2>Border</h2>
+          </header>
+          <p>
+            En CSS, el "border" (borde) se refiere a una línea que rodea el
+            contenido de un elemento HTML, creando un marco alrededor de él. El
+            borde puede ser de diferentes colores, estilos y grosores, y se
+            puede aplicar a cualquier elemento HTML, como un div, una imagen, un
+            botón, etc.
+          </p>
+          <p>
+            El borde se puede configurar utilizando las propiedades de CSS
+            "border-style", "border-color" y "border-width", que definen el
+            estilo de línea, el color y el grosor del borde, respectivamente.
+            Estas propiedades se pueden establecer individualmente o en conjunto
+            en una sola propiedad abreviada, como "border".
+          </p>
+          <p>
+            Los valores comunes de "border-style" incluyen "solid" (línea
+            sólida), "dashed" (línea discontinua), "dotted" (puntos) y "double"
+            (doble línea). Los valores comunes de "border-width" incluyen
+            píxeles, em y porcentajes, mientras que los valores comunes de
+            "border-color" incluyen nombres de colores, valores hexadecimales y
+            valores RGB.
+          </p>
+          <p>
+            Al agregar un borde a un elemento, puedes mejorar su apariencia
+            visual y separarlo de otros elementos en la página. Por ejemplo,
+            puedes agregar un borde a un botón para hacerlo destacar más y
+            llamar la atención del usuario.
+          </p>
+          <p>
+            En resumen, el borde es una línea que rodea el contenido de un
+            elemento HTML y se puede configurar utilizando propiedades de CSS
+            como "border-style", "border-color" y "border-width". Al agregar un
+            borde, puedes mejorar el aspecto visual y la separación de los
+            elementos en la página.
+          </p>
+          <code>.box{border: 1px solid black}</code>
+        </section>
+        <section class="main-section" id="margin">
+          <header>
+            <h2>Margin</h2>
+          </header>
+          <p>
+            En CSS, el "margin" (margen) se refiere al espacio en blanco que se
+            encuentra alrededor del borde de un elemento HTML. A diferencia del
+            padding, que se encuentra dentro del borde, el margin se encuentra
+            fuera del borde y crea un espacio en blanco entre el borde del
+            elemento y los elementos cercanos.
+          </p>
+          <p>
+            El margin se puede configurar utilizando las propiedades de CSS
+            "margin-top", "margin-right", "margin-bottom" y "margin-left", que
+            definen la cantidad de espacio en blanco que se agrega a cada lado
+            del borde del elemento. Estas propiedades se pueden establecer en
+            valores específicos, como píxeles o porcentajes, o se pueden
+            establecer con valores "auto" o "inherit".
+          </p>
+          <p>
+            Al agregar un margin a un elemento, puedes ajustar la cantidad de
+            espacio en blanco que lo separa de otros elementos en la página, lo
+            que puede ayudar a mejorar el diseño visual y la legibilidad del
+            contenido. Por ejemplo, puedes agregar un margin a un párrafo para
+            separarlo de otras secciones de contenido en la página.
+          </p>
+          <p>
+            Es importante tener en cuenta que el margin también puede afectar el
+            ancho y el alto de un elemento. Si se establece un ancho o alto
+            específico en un elemento con un margin, el tamaño total del
+            elemento será igual a la suma del ancho y el alto más los valores de
+            margin.
+          </p>
+          <p>
+            En resumen, el margin es el espacio en blanco que se encuentra
+            alrededor del borde de un elemento HTML, y se puede configurar
+            utilizando las propiedades de CSS correspondientes para ajustar el
+            diseño y la legibilidad del contenido en la página.
+          </p>
+          <code>.box{ margin: 1rem }</code>
+        </section>
+        <section class="main-section" id="outline">
+          <header>
+            <h2>Outline</h2>
+          </header>
+          <p>
+            Al igual que el borde, el outline rodea el contenido de un elemento
+            HTML, pero a diferencia del borde, el outline se dibuja fuera del
+            borde y no afecta la posición del contenido dentro del elemento.
+          </p>
+          <p>
+            El outline se puede configurar utilizando la propiedad de CSS
+            "outline", que define el estilo, el color y el grosor del contorno.
+            Los valores comunes para el estilo de outline incluyen "solid"
+            (línea sólida), "dashed" (línea discontinua), "dotted" (puntos) y
+            "double" (doble línea). También se puede configurar la propiedad de
+            "outline-offset" para establecer la distancia entre el borde y el
+            contorno.
+          </p>
+          <p>
+            El outline se utiliza comúnmente para resaltar un elemento o enfocar
+            la atención del usuario en un área específica de la página. Por
+            ejemplo, cuando un enlace está activo, el navegador suele mostrar un
+            outline alrededor del enlace para indicar al usuario que ha hecho
+            clic en él.
+          </p>
+          <p>
+            Es importante tener en cuenta que el outline no afecta la geometría
+            del elemento, por lo que no cambia su tamaño o posición en la
+            página. Sin embargo, a veces puede hacer que un elemento se vea más
+            grande de lo que realmente es, lo que puede afectar el diseño de la
+            página.
+          </p>
+          <p>
+            En resumen, el outline es una línea que rodea el contenido de un
+            elemento HTML, pero se dibuja fuera del borde y no afecta la
+            posición del contenido dentro del elemento. Se puede configurar
+            utilizando la propiedad de CSS "outline" y se utiliza comúnmente
+            para resaltar un elemento o enfocar la atención del usuario en un
+            área específica de la página.
+          </p>
+          <code>.box{ outline: red dotted 1px }</code>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
