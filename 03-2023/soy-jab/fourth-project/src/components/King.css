@@ -1,0 +1,23 @@
+.card {
+  border-radius: 1rem;
+  padding: 1rem;
+  color: white;
+}
+
+.card__title {
+  font-size: 1.8em;
+}
+
+.card__img {
+  max-width: 100%;
+}
+
+.card__subtitle {
+    margin-block: 0;
+}
+
+.card__cost {
+    margin-block: 0;
+}
+
+
