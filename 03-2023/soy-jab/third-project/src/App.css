@@ -1,0 +1,31 @@
+input {
+  color: orangered;
+  width: 150px;
+  line-height: 50px;
+  margin: 6px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px dotted darkred;
+  outline: none;
+  font-size: 2em;
+}
+
+.box {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+button {
+  font-size: 2rem;
+  padding: 5px 15px;
+  color: darkred;
+}
+
+.rojo {
+  color: red;
+}
+
+.verde {
+  color: green;
+}
