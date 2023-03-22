@@ -1,0 +1,25 @@
+body {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: blue;
+  font-weight: 700;
+}
+
+.btn--orange {
+  background-color: orange;
+}
