@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+  min-height: 100vh;
+}
+
+.btn {
+  padding: 5px;
+  margin: 2px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #1162ac;
+  background-color: #1162ac;
+  color: white;
+  width: 150px;
+}
+
+img {
+  width: 100px;
+  margin: 5px;
+  border-radius: 13px;
+}
