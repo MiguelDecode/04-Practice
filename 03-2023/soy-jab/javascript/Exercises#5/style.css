@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+.arrow {
+  font-size: 4em;
+  width: 200px;
+  height: 200px;
+}
+
+.btn1 {
+  width: 200px;
+  height: 200px;
+  background-image: url("https://www.html6.es/img/fondoBoton.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  text-align: center;
+  user-select: none;
+}
+
+.percentage {
+  font-size: 2em;
+}
