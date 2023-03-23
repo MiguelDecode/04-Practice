@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Landing Page</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="wrapper">
+        <img
+          src="./assets/keycup-wb.png"
+          alt="logo"
+          class="header-img"
+          id="header-img"
+        />
+        <nav id="nav-bar" class="nav-bar">
+          <a href="#header" class="nav-link">Home</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main" id="main">
+      <section class="section section-gallery" id="gallery">
+        <h2>Create new products</h2>
+        <video
+          src="./assets/keyboard.mp4"
+          id="video"
+          class="video"
+          controls
+        ></video>
+      </section>
+      <section class="section section-contact" id="contact">
+        <h2>Contact with Us</h2>
+        <form
+          action="https://www.freecodecamp.com/email-submit"
+          id="form"
+          class="form"
+        >
+          <label class="label" for="email">Your email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Insert your email here"
+            pattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g"
+          />
+          <input class="btn" type="submit" value="Send" id="submit" />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
