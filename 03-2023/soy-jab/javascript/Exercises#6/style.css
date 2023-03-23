@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  place-content: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+.box {
+  padding: 1rem;
+}
+
+.box--green {
+  background-color: #cddc39;
+  border: 6px green solid;
+  border-radius: 12px;
+}
+
+.box--blue {
+  background-color: blue;
+  border: none;
+  border-radius: initial;
+}
+
+.box--purple {
+  background-color: purple;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.img {
+  width: 50%;
+}
+
+.description {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
