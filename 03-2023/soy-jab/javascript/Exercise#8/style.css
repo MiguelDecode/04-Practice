@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  background-color: gray;
+}
+
+main {
+  padding: 2rem;
+  border: 1px solid goldenrod;
+  border-radius: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+
+.btn {
+  font-family: inherit;
+  font-weight: bold;
+  color: white;
+  flex: 1;
+}
+
+.btn-go {
+  background-color: green;
+}
+
+.btn-reset {
+  background-color: red;
+}
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.result-coin {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 1em;
+  margin: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.coin {
+  width: 30px;
+  height: 30px;
+  margin: 4px;
+}
+
