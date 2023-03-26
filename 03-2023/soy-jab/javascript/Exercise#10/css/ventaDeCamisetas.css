@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  place-content: center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.main {
+  position: relative;
+  border: 1px solid #333;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  min-width: 400px;
+}
+
+.texto {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translateX(-50%);
+  max-width: 250px;
+  font-size: 16px;
+  padding: 0.5rem;
+  color: black;
+}
+
+.rey {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 35%;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  font-family: inherit;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+}
