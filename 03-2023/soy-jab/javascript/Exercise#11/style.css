@@ -23,6 +23,7 @@ img {
   font-size: 1.6em;
   text-align: center;
   margin-bottom: 20px;
+  text-transform: capitalize;
 }
 
 .modal {
@@ -56,4 +57,8 @@ img {
 .modal__text {
   color: white;
   font-size: 3rem;
+}
+
+.modal__name {
+  text-transform: capitalize;
 }
