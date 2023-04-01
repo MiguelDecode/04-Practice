@@ -1,0 +1,11 @@
+.king {
+  border: 1px solid slategray;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: gainsboro;
+}
+
+.king__name {
+    color: red;
+    font-weight: bold;
+}
