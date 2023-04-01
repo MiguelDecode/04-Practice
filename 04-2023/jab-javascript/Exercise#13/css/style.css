@@ -1,0 +1,58 @@
+@font-face {
+  font-family: aldrich;
+  src: url("../assets/fonts/Aldrich-Regular.ttf");
+}
+
+body {
+  font-family: aldrich;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background-color: #888;
+}
+
+.calculadora {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.numeros {
+  display: flex;
+  padding: 7px 19px;
+  background-color: black;
+  border-radius: 10px 10px 0 0;
+}
+
+.numero,
+.puntos {
+  color: greenyellow;
+  font-size: 4em;
+  text-align: center;
+  user-select: none;
+}
+
+.numero {
+  width: 50px;
+}
+
+.puntos {
+  width: 20px;
+}
+
+.boton {
+  border-radius: 0 0 10px 10px;
+  border: 1px solid black;
+  width: 100%;
+  margin-top: 2px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 3.6em;
+}
+
+.boton:hover {
+  color: red;
+}
