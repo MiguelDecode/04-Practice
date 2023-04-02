@@ -25,11 +25,14 @@ const startTimer = () => {
 
     drawTimer();
   }, 1000);
+
+  isRunning = true;
 };
 
 const stopTimer = () => {
   clearInterval(crono);
   document.querySelector("audio").pause();
+  isRunning = false;
 };
 
 const drawTimer = () => {
@@ -83,16 +86,22 @@ $timer.addEventListener("click", (event) => {
   }
 
   if (event.target === $btn) {
-    if (isRunning) {
-      console.log("Pausa la cuenta atrás");
-      stopTimer();
-      isRunning = false;
-      $btn.textContent = "play_arrow";
+    if (!(minutes === 0 && seconds === 0)) {
+      if (isRunning) {
+        console.log("Pausa la cuenta atrás");
+        stopTimer();
+        $btn.textContent = "play_arrow";
+      } else {
+        console.log("Comienza la cuenta atrás");
+        startTimer();
+        $btn.textContent = "pause";
+      }
     } else {
-      console.log("Comienza la cuenta atrás");
-      startTimer();
-      isRunning = true;
-      $btn.textContent = "pause";
+      if (isRunning) {
+        console.log("Pausa la cuenta atrás");
+        stopTimer();
+        $btn.textContent = "play_arrow";
+      }
     }
   }
 
