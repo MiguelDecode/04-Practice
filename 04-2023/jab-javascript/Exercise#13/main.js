@@ -1,5 +1,6 @@
 const $timer = document.querySelector(".calculadora");
 const $btn = document.querySelector(".btn");
+const $boton = document.querySelector(".boton");
 const $minutesTens = document.getElementById("minutes-tens");
 const $minutesUnits = document.getElementById("minutes-units");
 const $secondsTens = document.getElementById("seconds-tens");
@@ -85,7 +86,7 @@ $timer.addEventListener("click", (event) => {
     seconds += 1;
   }
 
-  if (event.target === $btn) {
+  if (event.target === $boton || event.target === $btn) {
     if (!(minutes === 0 && seconds === 0)) {
       if (isRunning) {
         console.log("Pausa la cuenta atrás");
