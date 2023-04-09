@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  width: 120px;
+  cursor: pointer;
+}
+
+.contenedor {
+  overflow-x: scroll;
+  border: 1px dashed gray;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 0 20px 10px;
+}
+
+.productos,
+.dinero,
+.carrito {
+  display: flex;
+  align-items: center;
+}
+
+.producto {
+  width: 200px;
+  margin: 20px;
+}
+
+.presu {
+  font-size: 1.4em;
+  margin-right: 15px;
+}
+
+.info {
+  font-size: 1.2em;
+}
+
+.linea {
+  display: flex;
+}
+
+.columna1 {
+  width: 235px;
+  text-align: left;
+}
+
+.columna2 {
+  flex: 1;
+  text-align: right;
+}
+
+.nota {
+  border: 1px solid gray;
+  width: 310px;
+  border-radius: 4px;
+  margin-top: 20px;
+  text-align: center;
+  padding: 0 15px;
+}
