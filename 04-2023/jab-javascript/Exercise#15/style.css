@@ -1,0 +1,151 @@
+@font-face {
+  font-family: montserrat;
+  src: url("./assets/Montserrat-Regular.ttf");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: montserrat;
+  text-align: center;
+  margin: 0;
+}
+
+.main {
+  margin: 0.5rem;
+}
+
+.container {
+  border: 7px solid blueviolet;
+  border-radius: 1.25rem;
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.container--center {
+  border: 12px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: calc(minmax(1rem + 2vw, 3rem));
+}
+
+.king {
+  position: relative;
+}
+
+.king__img {
+  width: 100%;
+}
+
+.king__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+}
+
+.king__name,
+.king__btn {
+  padding: 0.5rem 1rem;
+  font-size: calc(1rem + 2vw);
+}
+
+.king--special {
+  text-transform: capitalize;
+  color: green;
+}
+
+.king__name {
+  text-transform: capitalize;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  text-align: left;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.king__btn {
+  background-color: blueviolet;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 0 0.5rem 0.5rem 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+@media (hover: hover) {
+  .king__btn:hover {
+    background-color: white;
+    color: blueviolet;
+  }
+}
+
+@media only screen and (min-width: 34.375rem) {
+  .container {
+    width: 80%;
+    margin-inline: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .king__info {
+    position: static;
+    flex-direction: column;
+  }
+
+  .king__name,
+  .king__btn {
+    text-align: center;
+    margin-block: 0;
+  }
+
+  .king__btn {
+    border-radius: 0.5rem;
+  }
+
+  @media (hover: hover) {
+    .king__btn:hover {
+      background-color: white;
+      color: blueviolet;
+      border: 1px solid blueviolet;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .king__name,
+  .king__btn {
+    font-size: calc(8px + 1vw);
+  }
+
+  .king:nth-child(1) {
+    grid-column: 4;
+    grid-row: 1;
+  }
+}
