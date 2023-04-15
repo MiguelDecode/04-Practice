@@ -1,4 +1,5 @@
-// Exercise 1
+// EXERCISE 1
+
 /* const name = prompt("Introduce tu nombre");
 const surname = prompt("Introduce tu apellido");
 const age = Number(prompt("Introduce tu edad"));
@@ -7,8 +8,7 @@ console.log(
   `Hola ${name} ${surname}, tienes ${age} años y el año que viene tendrás ${
     age + 1
   } `
-);
- */
+); */
 
 // Exercise 2
 
