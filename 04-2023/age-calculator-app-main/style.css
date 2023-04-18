@@ -23,6 +23,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  outline: 1px solid green;
 }
 
 html {
@@ -83,8 +84,6 @@ select {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
-  max-width: calc(100% - 3rem);
 }
 
 .calc__label {
@@ -92,7 +91,7 @@ select {
   flex-direction: column;
   text-transform: uppercase;
   font-size: 1rem;
-  max-width: 33.33%;
+  color: var(--clr-smoke-grey);
   transition: color 0.5s ease-in-out;
 }
 
@@ -105,7 +104,23 @@ select {
   border-radius: 0.5rem;
   height: 3rem;
   padding-left: 1rem;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.calc__input:focus {
+  outline: 1px solid var(--clr-primary-one);
+}
+
+.calc__input--invalid {
+  border-color: var(--clr-primary-two);
+  outline-color: var(--clr-primary-two);
+  color: var(--clr-primary-two);
+}
+
+.calc__input::-webkit-outer-spin-button,
+.calc__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .calc__error {
@@ -116,22 +131,11 @@ select {
   font-size: 0.8rem;
 }
 
-.calc__input--invalid {
-  border-color: var(--clr-primary-two);
-  outline-color: var(--clr-primary-two);
-}
-
-.calc__input::-webkit-outer-spin-button,
-.calc__input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .calc__divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-block: 2rem;
 }
 
 .calc__line {
@@ -146,6 +150,12 @@ select {
   border-radius: 100vw;
   padding: 0.8rem;
   z-index: 1;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.calc__arrow:hover {
+  background-color: var(--clr-offblack);
 }
 
 .calc__data {

@@ -19,35 +19,38 @@ const removeError = (el) => {
 };
 
 const checkInputs = (userDay, userMonth, userYear) => {
+  let dayIsValid;
+  let monthIsValid;
+  let yearIsValid;
+
   if ((userDay < 1 || userDay > 31) && userDay !== "") {
     addError(day, "Must be a valid day");
-    return false;
+    dayIsValid = false;
   } else {
     removeError(day);
+    dayIsValid = true;
   }
 
   if ((userMonth < 1 || userMonth > 12) && userMonth !== "") {
     addError(month, "Must be a valid month");
-    return false;
+    monthIsValid = false;
   } else {
     removeError(month);
+    monthIsValid = true;
   }
 
-  if (userYear !== "") {
-    if (userYear > 2023) {
-      addError(year, "Must be in the past");
-      return false;
-    } else if (userYear < 1900) {
-      addError(year, "Nobody lives that many years");
-      return false;
-    } else {
-      removeError(year);
-    }
+  if (userYear > 2023 && userYear !== "") {
+    addError(year, "Must be in the past");
+    yearIsValid = false;
+  } else if (userYear < 1900 && userYear !== "") {
+    addError(year, "Nobody lives that many years");
+    yearIsValid = false;
   } else {
     removeError(year);
+    yearIsValid = true;
   }
 
-  return true;
+  return dayIsValid && monthIsValid && yearIsValid ? true : false;
 };
 
 const calculateAge = (day, month, year) => {
@@ -58,16 +61,20 @@ const calculateAge = (day, month, year) => {
 
     const total = today - birthday;
 
-    const msInDay = 1000 * 60 * 60 * 24;
-    const msInYear = msInDay * 365.25;
+    if (Math.sign(total) !== 1) {
+      addError(document.getElementById("year"), "Must be in the past");
+    } else {
+      const msInDay = 1000 * 60 * 60 * 24;
+      const msInYear = msInDay * 365.25;
 
-    const years = Math.floor(total / msInYear);
-    const months = Math.floor((total % msInYear) / msInDay / 30.44);
-    const days = Math.floor(((total % msInYear) / msInDay) % 30.44);
+      const years = Math.floor(total / msInYear);
+      const months = Math.floor((total % msInYear) / msInDay / 30.44);
+      const days = Math.floor(((total % msInYear) / msInDay) % 30.44);
 
-    $years.textContent = years;
-    $months.textContent = months;
-    $days.textContent = days;
+      $years.textContent = years;
+      $months.textContent = months;
+      $days.textContent = days;
+    }
   }
 };
 
@@ -87,6 +94,18 @@ document.addEventListener("keyup", (event) => {
       $months.textContent = "--";
       $days.textContent = "--";
     }
+  } else {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (
+    (/[0-9]/.test(event.key) ||
+      event.key === "Backspace" ||
+      event.key === "Tab") &&
+    (event.target === day || event.target === month || event.target === year)
+  ) {
   } else {
     event.preventDefault();
   }
