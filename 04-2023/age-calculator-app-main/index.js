@@ -26,6 +26,9 @@ const checkInputs = (userDay, userMonth, userYear) => {
   if ((userDay < 1 || userDay > 31) && userDay !== "") {
     addError(day, "Must be a valid day");
     dayIsValid = false;
+  } else if (userDay === "") {
+    addError(day, "This field is required");
+    dayIsValid = false;
   } else {
     removeError(day);
     dayIsValid = true;
@@ -33,6 +36,9 @@ const checkInputs = (userDay, userMonth, userYear) => {
 
   if ((userMonth < 1 || userMonth > 12) && userMonth !== "") {
     addError(month, "Must be a valid month");
+    monthIsValid = false;
+  } else if (userMonth === "") {
+    addError(month, "This field is required");
     monthIsValid = false;
   } else {
     removeError(month);
@@ -44,6 +50,9 @@ const checkInputs = (userDay, userMonth, userYear) => {
     yearIsValid = false;
   } else if (userYear < 1900 && userYear !== "") {
     addError(year, "Nobody lives that many years");
+    yearIsValid = false;
+  } else if (userYear === "") {
+    addError(year, "This field is required");
     yearIsValid = false;
   } else {
     removeError(year);
@@ -62,7 +71,7 @@ const calculateAge = (day, month, year) => {
     const total = today - birthday;
 
     if (Math.sign(total) !== 1) {
-      addError(document.getElementById("year"), "Must be in the past");
+      addError(document.getElementById("day"), "Must be a valid date");
     } else {
       const msInDay = 1000 * 60 * 60 * 24;
       const msInYear = msInDay * 365.25;
