@@ -153,7 +153,7 @@ object.method(callback, 1, 2); */
 
 // This in JavaScript
 
-window.nick = "Global";
+/* window.nick = "Global";
 
 function getName() {
   console.log(this);
@@ -180,4 +180,41 @@ function context() {
   getNick();
 }
 
-context();
+context(); */
+
+// TODO Call, apply and bind
+
+console.log(this);
+
+this.place = "Contexto Global";
+
+function greet(sentence, person) {
+  console.log(`${sentence} ${person} desde ${this.place}`);
+}
+
+greet("Hola", "Miguel");
+
+const obj = {
+  place: "Contexto Objeto",
+};
+
+greet.call(obj, "Hola", "Miguel");
+greet.call(null, "Hola", "Miguel");
+greet.apply(obj, ["Hola", "Miguel"]);
+
+this.name = "Window";
+
+const persona = {
+  name: "Miguel",
+  salute: function () {
+    console.log(`Hola ${this.name}`);
+  },
+};
+
+persona.salute();
+
+const animal = {
+  salute: persona.salute.bind(this),
+};
+
+animal.salute();
