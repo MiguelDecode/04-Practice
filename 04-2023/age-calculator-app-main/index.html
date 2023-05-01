@@ -19,60 +19,62 @@
   </head>
   <body>
     <main class="calc">
-      <form class="calc__inputs">
-        <label class="calc__label" for="day"
-          >Day
+      <form class="form">
+        <fieldset class="form__wrapper">
+          <label class="form__label" for="day">Day</label>
           <input
-            class="calc__input"
+            class="form__input"
             type="number"
             name="day"
             id="day"
             placeholder="DD"
           />
-          <span class="calc__error"></span>
-        </label>
-        <label class="calc__label" for="month"
-          >Month
+          <span class="form__error"></span>
+        </fieldset>
+
+        <fieldset class="form__wrapper">
+          <label class="form__label" for="month">Month</label>
           <input
-            class="calc__input"
+            class="form__input"
             type="number"
             name="month"
             id="month"
             placeholder="MM"
           />
-          <span class="calc__error"></span>
-        </label>
-        <label class="calc__label" for="year"
-          >Year
+          <span class="form__error"></span>
+        </fieldset>
+
+        <fieldset class="form__wrapper">
+          <label class="form__label" for="year">Year</label>
           <input
-            class="calc__input"
+            class="form__input"
             type="number"
             name="year"
             id="year"
             placeholder="YYYY"
           />
-          <span class="calc__error"></span>
-        </label>
+          <span class="form__error"></span>
+        </fieldset>
       </form>
 
-      <section class="calc__divider">
-        <span class="calc__line"></span>
+      <section class="divider">
+        <span class="divider__line"></span>
         <img
-          class="calc__arrow"
+          class="divider__arrow"
           src="./assets/images/icon-arrow.svg"
           alt="Arrow"
         />
       </section>
 
-      <section class="calc__result">
-        <p class="calc__data">
-          <span class="calc__span" id="years">--</span> years
+      <section class="result__result">
+        <p class="result__data">
+          <span class="result__span" id="years">--</span> years
         </p>
-        <p class="calc__data">
-          <span class="calc__span" id="months">--</span> months
+        <p class="result__data">
+          <span class="result__span" id="months">--</span> months
         </p>
-        <p class="calc__data">
-          <span class="calc__span" id="days">--</span> days
+        <p class="result__data">
+          <span class="result__span" id="days">--</span> days
         </p>
       </section>
     </main>

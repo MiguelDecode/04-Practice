@@ -7,14 +7,14 @@ const $months = document.getElementById("months");
 const $years = document.getElementById("years");
 
 const addError = (el, msg) => {
-  el.classList.add("calc__input--invalid");
-  el.parentElement.classList.add("calc__label--invalid");
+  el.classList.add("form__input--invalid");
+  el.parentElement.classList.add("form__label--invalid");
   el.nextElementSibling.textContent = msg;
 };
 
 const removeError = (el) => {
-  el.classList.remove("calc__input--invalid");
-  el.parentElement.classList.remove("calc__label--invalid");
+  el.classList.remove("form__input--invalid");
+  el.parentElement.classList.remove("form__label--invalid");
   el.nextElementSibling.textContent = "";
 };
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Midudev Basic JavaScript for React</title>
+
+    <style>
+      body {
+        background-color: #222;
+      }
+
+      button {
+        background-color: #09f;
+        color: #fff;
+        border: 0;
+        padding: 4px 8px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <button data-id="123">Me gusta</button>
+    <button data-id="456">Me gusta</button>
+    <button data-id="789">Me gusta</button>
+    <script>
+      // Vanilla JavaScript
+
+      // Recuperamos todos los botones
+      const btns = document.querySelectorAll("button");
+
+      // Escuchamos el evento click y ejecutamos una función
+      btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Recuperamos la id del atributo HTML
+          const id = btn.getAttribute("data-id");
+
+          // Llamar a un servicio para actualizar si me gusta
+          // toggleLike(id)
+
+          if (btn.classList.contains("liked")) {
+            btn.classList.remove("liked");
+            btn.innerText = "Me gusta";
+          } else {
+            btn.classList.add("liked");
+            btn.innerText = "Quitar me gusta";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
