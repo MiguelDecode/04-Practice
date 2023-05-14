@@ -80,7 +80,8 @@ input[type="number"]:focus {
   border-color: #3c6fff;
 }
 
-button, .restart{
+button,
+.restart {
   font-size: 1em;
   background-color: #3c6fff;
   color: #fff;
@@ -104,6 +105,12 @@ p {
   font-weight: 400;
   color: #565b70;
   word-break: break-all;
+}
+
+.hint {
+  margin-top: 1em;
+  border-radius: 0.3em;
+  padding-block: 0.5em;
 }
 
 .error,

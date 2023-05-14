@@ -12,23 +12,21 @@
   </head>
   <body>
     <main class="container">
-      <article id="game">
+      <div id="game">
         <h3>I'm thinking of a number between 1-100.<br />Can you guess it?</h3>
 
-        <section class="input-wrapper">
+        <form class="input-wrapper" id="form">
           <input type="number" name="guess" id="guess" placeholder="00" />
           <button id="check-btn">Guess</button>
-          <button class="restart" id="restart">Restart</button>
-        </section>
+          <button type="reset" class="restart" id="restart">Restart</button>
+        </form>
 
         <p id="number-tries">Number Of Tries: <span>0</span></p>
 
         <p id="tried-numbers">Guessed Numbers are: <span></span></p>
 
-        <section class="result">
-          <p id="hint"></p>
-        </section>
-      </article>
+        <p class="hint" id="hint"></p>
+      </div>
     </main>
   </body>
 </html>
