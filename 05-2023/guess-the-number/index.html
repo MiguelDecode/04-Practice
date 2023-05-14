@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the number Game</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <article id="game">
+        <h3>I'm thinking of a number between 1-100.<br />Can you guess it?</h3>
+
+        <section class="input-wrapper">
+          <input type="number" name="guess" id="guess" placeholder="00" />
+          <button id="check-btn">Guess</button>
+          <button class="restart" id="restart">Restart</button>
+        </section>
+
+        <p id="number-tries">Number Of Tries: <span>0</span></p>
+
+        <p id="tried-numbers">Guessed Numbers are: <span></span></p>
+
+        <section class="result">
+          <p id="hint"></p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
