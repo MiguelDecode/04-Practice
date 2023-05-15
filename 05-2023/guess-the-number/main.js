@@ -20,9 +20,9 @@ const generateRandomNumber = (min = 1, max = 100) => {
 let answer = generateRandomNumber();
 console.log(answer);
 
+// Game
 const playGame = () => {
   const userNumber = userInput.value;
-  tries += 1;
 
   if (userNumber < 1 || userNumber > 100 || isNaN(userNumber)) {
     alert("Please enter a valid number between 1 and 100.");
@@ -30,17 +30,17 @@ const playGame = () => {
     return;
   }
 
+  tries += 1;
+
   if (userNumber != answer) {
     if (numbers.some((el) => userNumber === el)) {
       hint.textContent = "This number is yet tried. Try Again!";
-      form.reset();
     } else {
       if (userNumber < answer) hint.textContent = "Too low. Try Again!";
 
       if (userNumber > answer) hint.textContent = "Too high. Try Again!";
 
       numbers.push(userNumber);
-      form.reset();
     }
 
     hint.classList.add("error");
@@ -51,15 +51,15 @@ const playGame = () => {
     hint.classList.add("success");
     checkBtn.style.display = "none";
     restartBtn.style.display = "block";
-    form.reset();
     isPlayable = false;
   }
 
+  form.reset();
   numberOfTries.textContent = tries;
   triedNumbers.textContent = numbers.join(",");
 };
 
-// Reiniciar el juego
+// Reset the game after guess the number
 const resetGame = () => {
   tries = 0;
   numbers = [];
@@ -76,21 +76,15 @@ const resetGame = () => {
   isPlayable = true;
 };
 
-// Escuchando los eventos
+// Listen to the Events
 document.addEventListener("click", (event) => {
-  if (event.target === checkBtn) {
-    if (isPlayable) playGame();
-  }
+  if (event.target === checkBtn && isPlayable) playGame();
 
   if (event.target === restartBtn) resetGame();
 });
 
 document.addEventListener("keyup", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-  }
+  if (event.key === "Enter") event.preventDefault();
 });
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
+form.addEventListener("submit", (event) => event.preventDefault());
