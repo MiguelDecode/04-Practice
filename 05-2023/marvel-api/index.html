@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marvel Api App</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- api data -->
+    <script src="./api-data.js" defer></script>
+
+    <!-- Javascript -->
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <form class="form" id="form">
+        <input
+          type="search"
+          class="form__search"
+          name="search"
+          id="search"
+          value="Iron Man"
+        />
+        <input id="submit" type="submit" class="form__submit" value="Submit" />
+      </form>
+      <ul class="list" id="list"></ul>
+      <section class="card" id="card"></section>
+    </main>
+  </body>
+</html>
