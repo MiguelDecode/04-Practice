@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Take a screenshot with Javascript</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Link to a library -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- JavaScript -->
+  </head>
+  <body>
+    <main class="wrapper">
+      <div class="container" id="main-card">
+        <h1>Lorem Title</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
+          voluptates, earum atque architecto id minus sapiente nobis
+          consequuntur, necessitatibus voluptatibus excepturi tempora! Beatae ut
+          veritatis, distinctio voluptatum dolor repudiandae iusto.
+        </p>
+        <img src="./fish.jpg" alt="fish" />
+      </div>
+      <div id="preview-card" class="container"></div>
+      <button id="capture-button">Capture Screenshot</button>
+      <a class="hide" id="download-button">Download Screenshot</a>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
