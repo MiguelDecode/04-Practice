@@ -1,0 +1,37 @@
+---
+const {name, url} = Astro.props;
+---
+<section
+  class="landing-section bg-black h-screen w-screen text-center overflow-hidden relative"
+  data-header-color="black"
+>
+  <div class="z-30 relative h-full flex flex-col">
+    <header class="">
+      <h2 class="text-black pt-40 text-[40px] font-medium">{name}</h2>
+      <p class="text-black text-sm underline">
+        Concertar una prueba de conducción
+      </p>
+    </header>
+
+    <footer class="flex flex-col flex-grow justify-end pb-20">
+      <div class="gap-x-4 flex mx-auto">
+        <a
+          class="bg-gray-600 text-sm rounded font-medium text-white px-12 py-2 inline-block hover:border-gray-500 hover:bg-gray-500 hover:text-white transition-colors"
+          href="#">Explorar inventario</a
+        >
+        <a
+          class="bg-black text-white text-sm rounded font-medium px-12 py-2 hover:bg-white hover:text-black transition-colors inline-flex justify-center items-center"
+          href="#">Pedido personalizado</a
+        >
+      </div>
+    </footer>
+  </div>
+
+  <div class="absolute top-0 bottom-0 h-full w-full z-10">
+    <img
+      src=`../../public/${url}`
+      alt=`${name}`
+      class="h-full w-full object-cover object-center"
+    />
+  </div>
+</section>

@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import SectionHero from "../components/SectionHero.astro";
+import CarSection from "../components/SectionCar.astro";
+import SectionPower from "../components/SectionPower.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Tesla - El coche de tus sueños (y de Elon Musk)">
+  <LandingHeader />
+  <main
+    class="snap-y snap-mandatory relative w-full h-screen overflow-x-hidden scroll-m-0"
+  >
+    <div class="snap-center">
+      <SectionHero
+        color="white"
+        title="Disfrute de Tesla"
+        subtitle="Programe una prueba de conducción hoy mismo"
+      />
+    </div>
+    <div class="snap-center">
+      <CarSection name="Model Y" url="model-y.avif" />
+    </div>
+    <div class="snap-center">
+      <CarSection name="Model 3" url="model-3.avif" />
+    </div>
+    <div class="snap-center">
+      <CarSection name="Model S" url="model-s.avif" />
+    </div>
+    <div class="snap-center">
+      <CarSection name="Model X" url="model-x.avif" />
+    </div>
+    <div class="snap-center">
+      <SectionPower alt="powerwall" url="powerwall.avif" />
+    </div>
+    <div class="snap-center">
+      <Footer alt="accesories" url="accessories.avif" />
+    </div>
+  </main>
+</Layout>
