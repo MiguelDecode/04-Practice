@@ -1,0 +1,35 @@
+---
+import Layout from "../../components/Layout.astro";
+import bgImage from "../../images/code.jpg";
+
+const posts = await Astro.glob("./posts/*.md");
+---
+
+<Layout
+  pageTitle="Blog de desarollo"
+  pageDescription="Tutoriales de desarollo y programación"
+>
+  <h1>Blog de Desarollo Web</h1>
+
+  <img width="100" src={bgImage} alt="Glasses above a desk" />
+
+  {
+    posts.map((post) => {
+      return (
+        <a class="link" href={post.url}>
+          {post.frontmatter.title}
+        </a>
+      );
+    })
+  }
+
+  <style>
+    .link {
+      background-color: cornflowerblue;
+      color: black;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 4px;
+    }
+  </style>
+</Layout>
