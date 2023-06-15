@@ -1,0 +1,152 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-size: 15px;
+  font-family: "League Spartan", sans-serif;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+:root {
+  --clr-primary: hsl(180, 29%, 50%);
+  --clr-background: hsl(180, 52%, 96%);
+  --clr-filter: hsl(180, 31%, 95%);
+  --clr-neutral-dark: hsl(180, 8%, 52%);
+  --clr-neutral-very-dark: hsl(180, 14%, 20%);
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+/* Start Project */
+.header {
+  background-image: url("../design/mobile-design.jpg");
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter {
+  width: calc(100% - 2rem);
+  min-height: 4rem;
+  background-color: #fff;
+  border-radius: 0.3rem;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+}
+
+.filter__clear {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.filter__btn {
+  background-color: transparent;
+  border: none;
+  color: var(--clr-primary);
+  font-weight: var(--fw-bold);
+}
+
+main {
+  background-color: var(--clr-filter);
+  min-height: 100vh;
+  padding-bottom: 1rem;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  margin: 2rem auto;
+  border-radius: 0.3rem;
+  border-left: 4px solid var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+.card__image {
+  position: absolute;
+  top: -1.5rem;
+  width: 3.5rem;
+}
+
+.card__title {
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  margin-top: 2rem;
+}
+
+.card__subtitle {
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-very-dark);
+}
+
+.card__data {
+  color: var(--clr-neutral-dark);
+}
+
+.card__line {
+  background-color: var(--clr-neutral-dark);
+  height: 1.5px;
+  width: 100%;
+  border-radius: 1px;
+  margin-bottom: 1rem;
+}
+
+.card__tags {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card__tag {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--clr-filter);
+  font-weight: var(--fw-bold);
+  border-radius: 0.3rem;
+}
+
+.filter__tag {
+  padding: 0.5rem;
+  margin: 1rem;
+  background-color: var(--clr-filter);
+  font-weight: var(--fw-bold);
+  border-radius: 0.3rem;
+  display: inline-flex;
+}
+
+.filter__name {
+  margin: 0;
+  padding-right: 1rem;
+}
+
+.filter__delete {
+  width: 1rem;
+}
