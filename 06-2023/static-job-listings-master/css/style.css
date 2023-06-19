@@ -82,6 +82,7 @@ main {
   position: relative;
   background-color: white;
   width: calc(100% - 2rem);
+  max-width: 37.5rem;
   padding: 1rem;
   margin: 2rem auto;
   border-radius: 0.3rem;
@@ -131,6 +132,11 @@ main {
   background-color: var(--clr-filter);
   font-weight: var(--fw-bold);
   border-radius: 0.3rem;
+}
+
+.filter{
+  width: calc(100% - 2rem);
+  max-width: 37.5rem;
 }
 
 .filter__tag {

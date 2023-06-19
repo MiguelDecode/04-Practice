@@ -22,7 +22,7 @@ const drawCard = (obj) => {
   const $tagsContainer = document.createElement("div");
   $tagsContainer.classList.add("card__tags");
 
-  const tags = [...obj.languages, ...obj.tools];
+  const tags = [...obj.languages, ...obj.tools, obj.level, obj.role];
   tags.forEach((tag) => {
     const $tag = document.createElement("span");
     $tag.classList.add("card__tag");
@@ -64,7 +64,12 @@ const drawOffers = () => {
       .then((response) => response.json())
       .then((data) => {
         data.forEach((card) => {
-          const cardTags = [...card.languages, ...card.tools];
+          const cardTags = [
+            ...card.languages,
+            ...card.tools,
+            card.role,
+            card.level,
+          ];
           const filtersArray = [...filters];
 
           // Busca que las tarjetas cumplan con todas las tags indicadas en el filtro.
@@ -73,10 +78,9 @@ const drawOffers = () => {
           );
 
           // Busca que las tarjetas contengan una de las tags indicadas en el filtro.
-/*           const isInclude = filtersArray.some((filter) =>
+          /*           const isInclude = filtersArray.some((filter) =>
             cardTags.includes(filter)
           ); */
-          
 
           if (isInclude) drawCard(card);
         });
