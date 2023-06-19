@@ -54,6 +54,7 @@ const drawFilterTag = (tagName) => {
 // Dibujar las ofertas en furción de los filtros.
 const drawOffers = () => {
   $containerOffers.innerHTML = "";
+
   if (filters.size === 0) {
     fetch("../data.json")
       .then((response) => response.json())
@@ -61,18 +62,25 @@ const drawOffers = () => {
   } else {
     fetch("../data.json")
       .then((response) => response.json())
-      .then((data) =>
+      .then((data) => {
         data.forEach((card) => {
-          filters.forEach((filter) => {
-            if (
-              card.languages.includes(filter) ||
-              card.tools.includes(filter)
-            ) {
-              drawCard(card);
-            }
-          });
-        })
-      );
+          const cardTags = [...card.languages, ...card.tools];
+          const filtersArray = [...filters];
+
+          // Busca que las tarjetas cumplan con todas las tags indicadas en el filtro.
+          const isInclude = filtersArray.every((filter) =>
+            cardTags.includes(filter)
+          );
+
+          // Busca que las tarjetas contengan una de las tags indicadas en el filtro.
+/*           const isInclude = filtersArray.some((filter) =>
+            cardTags.includes(filter)
+          ); */
+          
+
+          if (isInclude) drawCard(card);
+        });
+      });
   }
 };
 
