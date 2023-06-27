@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document Object Model</title>
 
+    <link rel="stylesheet" href="./DOM/style.css" />
+
     <script src="./DOM/dom.js" defer></script>
   </head>
   <body>
@@ -26,8 +28,17 @@
         <li><a href="#">Sección 5</a></li>
       </ul>
     </nav>
-    <input type="text" name="nombre" placeholder="Nombre" >
-  <a href="./dom.html" class="link-dom" data-description="Document Object Model">DOM</a>
+
+    <input type="text" name="nombre" placeholder="Nombre" />
+
+    <a
+      href="./dom.html"
+      style="background-color: #f7df1e; color: #222"
+      class="link-dom"
+      data-description="Document Object Model"
+      >DOM</a
+    >
+
     <section class="cards">
       <figure class="card">
         <img src="https://placeimg.com/200/200/tech" alt="Tech" />
@@ -50,5 +61,50 @@
         <figcaption>Architecture</figcaption>
       </figure>
     </section>
+
+    <template id="template-card">
+      <figure class="card">
+        <img />
+        <figcaption></figcaption>
+      </figure>
+    </template>
+
+    <h3>Eventos en JavaScript</h3>
+    <h4>Manejadores de Eventos</h4>
+    <button onclick="alert('Has clickado')">Evento con atributo HTML</button>
+    <button onclick="holaMundo()">Evento con atributo HTML</button>
+    <br />
+    <br />
+    <button id="evento-semantico">Evento con Manejador Semántico</button>
+    <br />
+    <br />
+    <button id="evento-multiple">Evento con Manejador Múltiple</button>
+    <br /><br />
+    <button id="evento-parametros">Evento con Parámetros</button>
+    <br /><br />
+    <button id="evento-remover">
+      Removiendo eventos con manejadores múltiples
+    </button>
+    <h4>Flujo de Eventos</h4>
+    <section class="eventos-flujo">
+      <div class="uno">
+        1
+        <div class="dos">
+          2
+          <div class="tres">
+            3
+            <a href="https://jonmircha.com" target="_blank" rel="noopener"
+              >jonmircha</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <h3 style="width: 2000px">Manejo del BOM</h3>
+    <button id="abrir-ventana">Abrir Ventana</button>
+    <br /><br />
+    <button id="cerrar-ventana">Cerrar Ventana</button>
+    <br /><br />
+    <button id="imprimir-ventana">Imprimir ventana</button>
   </body>
 </html>
