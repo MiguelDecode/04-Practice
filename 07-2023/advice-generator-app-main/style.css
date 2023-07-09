@@ -1,0 +1,83 @@
+:root {
+  --clr-cyan: hsl(193, 38%, 86%);
+  --clr-green: hsl(150, 100%, 66%);
+  --clr-blue: hsl(217, 19%, 38%);
+  --clr-grayish: hsl(217, 19%, 24%);
+  --clr-dark: hsl(218, 23%, 16%);
+  --fs-quote: 28px;
+  --fw-main: 800;
+  --ff-main: "Manrope", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-main);
+  font-weight: var(--fw-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-dark);
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.card {
+  background-color: var(--clr-grayish);
+  position: relative;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  width: calc(100% - 2rem);
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.card__id {
+  color: var(--clr-green);
+  font-size: 1rem;
+}
+
+.card__advice {
+  color: var(--clr-cyan);
+  font-size: var(--fs-quote);
+}
+
+.divider {
+  margin-bottom: 2rem;
+}
+
+.random {
+  position: absolute;
+  margin-inline: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--clr-green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
