@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Javascript -->
+    <script src="./index.js" defer type="module"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="/" class="header__logo"> Pokedex </a>
+
+      <form class="form">
+        <div class="form__container">
+          <img
+            class="form__icon-search"
+            src="./assets/search.svg"
+            alt="Search icon"
+          />
+          <input
+            class="form__input-search"
+            id="inputSearch"
+            type="search"
+            placeholder="Search pokemon by name"
+          />
+        </div>
+        <button id="btnSearch" class="form__submit" type="submit">Search</button>
+      </form>
+    </header>
+
+    <main>
+      <div class="navigation">
+        <nav class="nav">
+        </nav>
+        <button class="filter" id="filterBtn">
+          <img
+            class="filter__icon"
+            src="./assets/filter.svg"
+            alt="Filter icon"
+          />
+          <span class="filter__text">Filter</span>
+        </button>
+      </div>
+
+      <article class="pokemons"></article>
+    </main>
+
+    <aside class="aside" id="filterAside">
+      <h2 class="aside__title">Types</h2>
+      <form class="aside__form"></form>
+    </aside>
+  </body>
+</html>

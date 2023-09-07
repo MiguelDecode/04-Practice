@@ -1,0 +1,75 @@
+---
+import MenuItemContainerView from "../components/MenuItemContainerView.astro";
+import MenuItemView from "../components/MenuItemView.astro";
+
+import menuItems from "../data/menuItemsData";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <MenuItemContainerView>
+      {menuItems.map((item) => <MenuItemView {...item} />)}
+    </MenuItemContainerView>
+    <div class="container">
+      <div class="logo">
+        <img src="/assets/hero-logo.webp" width="400px" alt="Logo" />
+      </div>
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #da62c4 30%,
+      white 60%
+    );
+  }
+
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: black;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .container {
+    margin-top: 120px;
+    width: 700px;
+    margin-inline: auto;
+    position: relative;
+    color: white;
+  }
+
+  .logo {
+    text-align: center;
+    position: relative;
+    top: -100px;
+    margin-bottom: -50px;
+  }
+
+  p img {
+    width: 100%;
+  }
+</style>

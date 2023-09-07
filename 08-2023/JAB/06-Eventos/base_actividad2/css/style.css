@@ -1,0 +1,12 @@
+.tecla{
+  border:1px solid gray;
+  padding:3px 7px 5px;
+  text-align:center;
+  margin:1px;
+  border-radius:3px;
+  border:none;
+  font-size:0.8em;
+  background-color:gray;
+  color:white;
+  box-shadow:0 0 10px black inset;
+}

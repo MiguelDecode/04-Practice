@@ -1,0 +1,35 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<div>
+  <a href={frontmatter.url}>
+    <img src={frontmatter.image.url} />
+    <div class="title">
+      {frontmatter.title}
+    </div>
+    <div class="description">
+      {frontmatter.description}
+    </div>
+  </a>
+</div>
+
+<style>
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  a .description {
+    padding: 10px;
+    color: white;
+  }
+
+  a .title {
+    font-size: 32px;
+  }
+
+  img {
+    width: 100%;
+  }
+</style>

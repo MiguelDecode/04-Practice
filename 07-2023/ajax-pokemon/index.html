@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon con paginación</title>
+
+    <style>
+      .loader {
+        display: block;
+        margin-inline: auto;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        text-align: center;
+      }
+
+      main figure {
+        border: 1px solid #333;
+        padding: 0.5rem;
+        border-radius: 1rem;
+      }
+
+      figcaption {
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Pokemons</h1>
+    <nav class="nav"></nav>
+    <main></main>
+
+    <script>
+      const $main = document.querySelector("main");
+      const $nav = document.querySelector(".nav");
+      const apiUrl = "https://pokeapi.co/api/v2/pokemon";
+
+      async function getPokemons(url) {
+        try {
+          $main.innerHTML = `<img src="./assets/loader.gif" class="loader" alt="Cargando...">`;
+
+          let res = await fetch(url);
+          let json = await res.json();
+          let $template = "";
+          let $prevLink;
+          let $nextLink;
+
+          // console.log(json);
+
+          if (!res.ok) throw { status: res.status, statusText: res.statusText };
+
+          for (let i = 0; i < json.results.length; i++) {
+            const el = json.results[i];
+            try {
+              let res = await fetch(el.url);
+              let pokemon = await res.json();
+
+              // console.log(pokemon);
+
+              if (!res.ok)
+                throw { status: res.status, statusText: res.statusText };
+
+              $template += `
+              <figure>
+                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+                <figcaption>#${pokemon.id} ${pokemon.name}</figcaption>
+              </figure>`;
+            } catch (err) {
+              console.log(err);
+              let msg = err.statusText || "Ocurrió un error";
+              $template += `
+              <figure>
+                <figcaption>Error ${err.status}: ${msg}</figcaption>
+              <figure>`;
+            }
+          }
+          $main.innerHTML = $template;
+          $prevLink = json.previous ? `<a href="${json.previous}">⬅️</a>` : "";
+          $nextLink = json.next ? `<a href="${json.next}">➡️</a>` : "";
+          $nav.innerHTML = $prevLink + " " + $nextLink;
+        } catch (err) {
+          // console.log(err);
+          let msg = err.statusText || "Ocurrió un error";
+          $main.innerHTML = `<p>Error ${err.status}: ${msg}</p>`;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", (event) =>
+        getPokemons(apiUrl)
+      );
+
+      document.addEventListener("click", (event) => {
+        if (event.target.matches(".nav a")) {
+          event.preventDefault();
+          console.log(event.target.getAttribute('href'))
+          getPokemons(event.target.getAttribute("href"));
+        }
+      });
+    </script>
+  </body>
+</html>

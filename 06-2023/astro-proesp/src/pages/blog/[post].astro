@@ -1,0 +1,28 @@
+---
+import PostContent from "../../components/Astro/PostContent/PostContent.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { post: "primero" },
+    },
+    {
+      params: { post: "segundo" },
+    },
+  ];
+}
+
+const { post } = Astro.params;
+
+const postTitle = "Mi primer post";
+const postText =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean venenatis pharetra mi non pretium. Praesent ut nunc quis urna malesuada suscipit. Phasellus vel odio eu nibh dictum eleifend quis sit amet mauris. Sed semper, sapien vitae mattis mattis, nisl magna sodales risus, vel laoreet dui massa sit amet arcu. Donec non lacinia nunc. Etiam lobortis fermentum consequat. Morbi eu erat efficitur, dictum sapien eget, ullamcorper neque. Cras condimentum ligula varius fermentum venenatis. Sed a quam sapien. Cras a enim ullamcorper, tincidunt tellus quis, commodo nisl.";
+---
+
+<Layout title="Blog">
+  <main>
+    <h1>{post}</h1>
+    <PostContent title={postTitle} text={postText} />
+  </main>
+</Layout>

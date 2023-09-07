@@ -1,0 +1,16 @@
+div {
+  font-size: 1.5em;
+}
+section img {
+  width: 100%;
+}
+section {
+  border: 1px solid gray;
+  padding: 20px;
+  max-width: 400px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}

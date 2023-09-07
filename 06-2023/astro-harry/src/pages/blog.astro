@@ -1,0 +1,13 @@
+---
+import LayoutPost from "../layouts/LayoutPost.astro";
+import PostPreview from "../components/PostPreview.astro";
+import type Card from "../components/Card.astro";
+
+const posts = await Astro.glob("./posts/*.md");
+---
+
+<LayoutPost title="Blog">
+  <section>
+    {posts.map((post) => <PostPreview {...post} />)}
+  </section>
+</LayoutPost>

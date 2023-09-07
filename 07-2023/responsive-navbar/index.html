@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Hamburger jonsuh -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
+      integrity="sha512-+mlclc5Q/eHs49oIOCxnnENudJWuNqX5AogCiqRBgKnpoplPzETg2fkgBFVC6WYUVxYYljuxPNG8RE7yBy1K+g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Javascript -->
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <nav class="nav">
+        <!-- Logo -->
+        <img class="nav__logo" src="./assets/logo.svg" alt="Logo" />
+        <!-- Menu toggle -->
+        <button
+          id="menu"
+          class="nav__menu hamburger hamburger--slider"
+          type="button"
+        >
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+        <!-- Nav Links -->
+        <ul id="links" class="nav__ul nav__ul--links hidden">
+          <li class="nav__li">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__li">
+            <a href="about.html" class="nav__link">About</a>
+          </li>
+          <li class="nav__li">
+            <a href="projects.html" class="nav__link">Projects</a>
+          </li>
+          <li class="nav__li">
+            <a href="contact" class="nav__link">Contact</a>
+          </li>
+        </ul>
+        <!-- Social Links -->
+        <ul id="social" class="nav__ul nav__ul--social hidden">
+          <li class="nav__li">
+            <a href="https://www.twitter.com">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav__li">
+            <a href="https://www.twitter.com">
+              <i class="fab fa-behance"></i>
+            </a>
+          </li>
+          <li class="nav__li">
+            <a href="https://www.twitter.com">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li class="nav__li">
+            <a href="https://www.twitter.com">
+              <i class="fab fa-sketch"></i>
+            </a>
+          </li>
+          <li class="nav__li">
+            <a href="https://www.twitter.com">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+    </nav>
+  </body>
+</html>

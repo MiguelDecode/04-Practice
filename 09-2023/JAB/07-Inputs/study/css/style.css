@@ -1,0 +1,10 @@
+label,
+input,
+div,
+button {
+  font-size: 1.5em;
+}
+
+input {
+  padding: 3px 8px 4px;
+}

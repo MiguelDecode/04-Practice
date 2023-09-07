@@ -1,0 +1,62 @@
+---
+import CardsView from "./CardsView";
+import type { CardItem } from "../types/types";
+
+const cards: CardItem[] = [
+  {
+    title: "Explore an open world",
+    image: "/assets/game-info-panel-01.jpg",
+    description:
+      "The magical world awaits you. Freely explore and tour Hogwarts Castle, Hogsmeade, the Forbidden Forest, and the surrounding lands.",
+  },
+  {
+    title: "Be the magician or witch you want to be",
+    image: "/assets/game-info-panel-02.jpg",
+    description:
+      "Learn spells, make potions, grow plants, and care for fantastic animals throughout the journey. Be selected for your home, forge relationships and learn the skills that will lead you to become the magician or witch you want to be.",
+  },
+  {
+    title: "Live a new adventure in the magical world",
+    image: "/assets/game-info-panel-03.jpg",
+    description:
+      "Live the magical world in a remote, unexplored age and discover a hidden truth from that past. Fight trolls, scary magicians, goblins, and more on your way to the great battle against a dangerous enemy that threatens the fate of the magical world.",
+  },
+];
+---
+
+<section>
+  <div class="trailer">
+    <img src="/assets/launch-trailer.jpg" alt="Trailer" />
+  </div>
+
+  <p class="description">
+    Hogwarts Legacy is an immersive role-playing game in the open world that is
+    inspired by the books in the Harry Potter saga. Enjoy the Hogwarts of the
+    19th century. Your character is a student of the famous school that holds
+    the key to an ancient secret that threatens to destroy the magical world.
+    Now you can take control of the action and be the center of your own
+    adventure in the magical world. The legacy is in your hands.
+  </p>
+
+  <div class="cardsContainer">
+    <CardsView cards={cards} client:load />
+  </div>
+</section>
+
+<style>
+  section {
+    width: 70%;
+    margin: 0 auto;
+    color: white;
+  }
+
+  .description {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+  }
+</style>
