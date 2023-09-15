@@ -28,7 +28,7 @@ const createPokemonCard = (pokemon) => {
   articleElement.classList.add("pokemon");
   const pokemonId = formatPokemonId(pokemon.id);
 
-  let pokemonTypes = createPokemonTypes(pokemon.types);
+  const pokemonTypes = createPokemonTypes(pokemon.types);
 
   articleElement.innerHTML = `
       <p class="pokemon__back">#${pokemonId}</p>
@@ -66,13 +66,11 @@ const getPokemonData = async (url) => {
   try {
     const res = await fetch(url);
 
-    console.log(res.url); // Si se encuentra ordenado
-
     if (!res.ok) throw new Error(res.statusText || "Ocurrío un error");
 
     const json = await res.json();
 
-    console.log(json); // No estan ordenados
+    console.log(json.id);
 
     createPokemonCard(json);
   } catch (err) {
@@ -88,7 +86,11 @@ const getPokemons = async () => {
 
     const json = await res.json();
 
-    json.results.forEach((pokemon) => getPokemonData(pokemon.url));
+    const pokemonList = json.results;
+    for (let i = 0; i < pokemonList.length; i++) {
+      await getPokemonData(pokemonList[i].url);
+    }
+    // json.results.forEach( (pokemon) => getPokemonData(pokemon.url)); // No funcionaba correctamente
   } catch (err) {
     console.log(err);
   }
