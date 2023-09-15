@@ -31,17 +31,16 @@ const lengthTextElement = document.getElementById("password-length");
 const rangeElement = document.getElementById("range");
 const buttonGenerateElement = document.getElementById("generate-password");
 
-const lowercaseInputElement = document.getElementById("lowercase-input");
-const uppercaseInputElement = document.getElementById("uppercase-input");
-const numbersInputElement = document.getElementById("numbers-input");
-const symbolsInputElement = document.getElementById("symbols-input");
+const optionsElement = document.getElementById("options");
 
 let allowedCharacters = "";
 
-const lowerCaseCharacters = "abcdefghijklmnñopqrstuvwxyz";
-const upperCaseCharacters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
-const numbersCharacters = "0123456789";
-const symbolsCharacters = '+-.,!"$%&/()=?{}';
+const passwordCharacters = {
+  lowercase: "abcdefghijklmnñopqrstuvwxyz",
+  uppercase: "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ",
+  numbers: "0123456789",
+  symbols: '+-.,!"$%&/()=?{}',
+};
 
 let passwordLength = rangeElement.value;
 lengthTextElement.textContent = passwordLength;
@@ -59,23 +58,16 @@ const setDisabledButton = () => {
   buttonGenerateElement.disabled = !allowedCharacters.length;
 };
 
-const checkPasswordOptions = () => {
+const checkPasswordOptions = (element) => {
   allowedCharacters = "";
-  if (lowercaseInputElement.checked) {
-    allowedCharacters += lowerCaseCharacters;
-  }
 
-  if (uppercaseInputElement.checked) {
-    allowedCharacters += upperCaseCharacters;
-  }
+  const allOptions = optionsElement.querySelectorAll(
+    'input[type="checkbox"]:checked'
+  );
 
-  if (numbersInputElement.checked) {
-    allowedCharacters += numbersCharacters;
-  }
-
-  if (symbolsInputElement.checked) {
-    allowedCharacters += symbolsCharacters;
-  }
+  allOptions.forEach((checkbox) => {
+    allowedCharacters += passwordCharacters[checkbox.id];
+  });
 
   setDisabledButton();
 
@@ -96,7 +88,12 @@ rangeElement.addEventListener("input", setPasswordLength);
 
 buttonGenerateElement.addEventListener("click", generatePassword);
 
-lowercaseInputElement.addEventListener("change", checkPasswordOptions);
+/* lowercaseInputElement.addEventListener("change", checkPasswordOptions);
 uppercaseInputElement.addEventListener("change", checkPasswordOptions);
 numbersInputElement.addEventListener("change", checkPasswordOptions);
-symbolsInputElement.addEventListener("change", checkPasswordOptions);
+symbolsInputElement.addEventListener("change", checkPasswordOptions); */
+
+optionsElement.addEventListener("click", (event) => {
+  if (event.target.type !== "checkbox") return;
+  checkPasswordOptions(event.target);
+});
