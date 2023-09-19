@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "json-server": "^0.17.3",
+    "vite": "^4.4.5"
+  },
+  "name": "crud-js",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "server": "json-server server/db.json --port 3001"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}
