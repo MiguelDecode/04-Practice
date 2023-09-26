@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estado Inmutable</title>
+  </head>
+
+  <body>
+    <h1>Estado Inmutable</h1>
+
+    <form id="todo-form">
+      <input type="text" id="todo-item" placeholder="Tarea por hacer" />
+      <input type="submit" value="Agregar" />
+    </form>
+
+    <h2>Lista de Tareas</h2>
+    <ul id="todo-list"></ul>
+
+    <!-- Javascript -->
+    <script>
+      // HTML References
+      const todoForm = document.getElementById("todo-form");
+      const inputTodo = document.getElementById("todo-item");
+      const todoListContainer = document.getElementById("todo-list");
+
+      // Variables
+      const state = {
+        todoList: [],
+      };
+
+      const createTemplate = () => {
+        if (state.todoList.length < 1)
+          return `<p>Lista sin tareas por hacer</p>`;
+
+        let result = "";
+
+        const todos = state.todoList.map(
+          (todo) => (result += `<li>${todo}</li>`)
+        );
+
+        return result;
+      };
+
+      const renderTemplate = () => {
+        if (!todoListContainer) return;
+        todoListContainer.innerHTML = createTemplate();
+      };
+
+      // Obtain a copy of state but Inmutable
+      const getState = () => structuredClone(state);
+
+      // Update the State with reactivity. Compare the original state and ban create new keys.
+      const setState = (obj) => {
+        for (let key in obj) {
+          if (state.hasOwnProperty(key)) {
+            state[key] = obj[key];
+          }
+        }
+
+        renderTemplate();
+      };
+
+      const resetInput = () => {
+        inputTodo.value = "";
+        inputTodo.focus();
+      };
+
+      const addTodo = (event) => {
+        event.preventDefault();
+
+        if (!inputTodo.value.trim()) return;
+
+        const lastState = getState();
+        lastState.todoList.push(inputTodo.value);
+
+        setState({ todoList: lastState.todoList });
+
+        resetInput();
+      };
+
+      setState({
+        todoList: ["Tarea 1", "Tarea 2", "Tarea 3"],
+      });
+
+      // Listeners
+      document.addEventListener("DOMContentLoaded", renderTemplate);
+      todoForm.addEventListener("submit", addTodo);
+    </script>
+  </body>
+</html>
