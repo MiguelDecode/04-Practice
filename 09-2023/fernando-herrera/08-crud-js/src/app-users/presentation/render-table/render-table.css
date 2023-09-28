@@ -1,9 +1,0 @@
-table {
-  background-color: rgba(0, 0, 0, 0.348);
-  border-radius: 0.3125rem;
-  padding: 0.3125rem;
-}
-
-table * {
-  padding: 0.3125rem 0.625rem;
-}
