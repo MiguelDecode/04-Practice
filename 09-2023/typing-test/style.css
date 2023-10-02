@@ -47,6 +47,13 @@ select {
   display: none;
 }
 
+.invisible {
+  position: absolute;
+  top: -6.25rem;
+}
+
+/* Progress-bar */
+
 .progress {
   position: absolute;
   top: 0;
