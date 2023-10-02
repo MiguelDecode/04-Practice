@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typography Test</title>
+  </head>
+  <body>
+    <div class="progress" id="progress-bar">
+      <div class="progress__indicator" id="progress-indicator"></div>
+    </div>
+
+    <button id="start-btn">Start</button>
+
+    <div class="results none" id="results-container">
+      <p class="results__data">
+        Correct letters: <span id="correct-letters"></span>
+      </p>
+      <p class="results__data">Mistakes: <span id="wrong-letters"></span></p>
+      <p class="results__data">WPM: <span id="wpm"></span></p>
+      <button id="restart-btn">Restart</button>
+    </div>
+
+    <script type="module" src="/src/game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+:root {
+  --playtime: 10s;
+  --br-main: 1.25rem;
+  --clr-main: gray;
+  --clr-text: white;
+  --fz-xxl: 6rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  font-family: Roboto, san;
+  background-image: linear-gradient(
+    45deg,
+    rgba(238, 228, 198, 1) 4%,
+    rgba(137, 191, 156, 1) 62%
+  );
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Utility classes */
+.none {
+  display: none;
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  height: 0.625rem;
+  width: 100%;
+  background-color: red;
+}
+
+.progress__indicator {
+  height: 0.625rem;
+  background-color: green;
+}
+
+.progress__indicator--run {
+  animation-name: advance;
+  animation-duration: var(--playtime);
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.results__data {
+  background-color: var(--clr-main);
+  color: var(--clr-text);
+  padding: 1.25rem;
+  border-radius: var(--br-main);
+}
+
+button {
+  padding: 3.125rem;
+  border: unset;
+  border-radius: var(--br-main);
+  background-color: var(--clr-main);
+  color: var(--clr-text);
+  font-size: var(--fz-xxl);
+}
+
+@keyframes advance {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
