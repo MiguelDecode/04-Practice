@@ -71,3 +71,60 @@ export class EventosES7 extends Component {
     );
   }
 }
+
+function Button(props) {
+  return <button onClick={props.myOnClick}>Botón Componetizado</button>;
+}
+
+const ButtonOptimized = ({ myOnClick }) => (
+  <button onClick={myOnClick}>Botón optimizado y componetizado</button>
+);
+
+export class MasSobreEventos extends Component {
+  handleclick = (event, msg) => {
+    console.log(msg);
+    console.log(event);
+    console.log(event.nativeEvent);
+  };
+
+  render() {
+    return (
+      <div>
+        <h2>Mas sobre los eventos</h2>
+        <button
+          onClick={(event) =>
+            this.handleclick(event, "Hola pasando parametro desde un evento")
+          }
+        >
+          Saludar
+        </button>
+        {/* Evento Personalizado ejemplo fallido */}
+        <Button
+          onClick={(event) =>
+            this.handleclick(
+              event,
+              "Hola pasando parametro desde un componente botón"
+            )
+          }
+        />
+        {/* Evento Personalizado de la manera correcta */}
+        <Button
+          myOnClick={(event) =>
+            this.handleclick(
+              event,
+              "Hola pasando parametro desde un componente botón"
+            )
+          }
+        />
+        <ButtonOptimized
+          myOnClick={(event) =>
+            this.handleclick(
+              event,
+              "Hola pasando parametro desde un componente botón"
+            )
+          }
+        />
+      </div>
+    );
+  }
+}

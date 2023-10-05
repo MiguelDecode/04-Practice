@@ -1,7 +1,14 @@
+// import { CicloVida } from "./components/CicloVida";
+// import AjaxApis from "./components/AjaxApis";
+// import ScrollHooks from "./components/ScrollHooks";
 import "./App.css";
+import { EventosES6, EventosES7, MasSobreEventos } from "./components/Eventos";
+import AjaxHooks from "./components/AjaxHooks";
+import ContadorHooks from "./components/ContadorHooks";
 import Estado from "./components/Estado";
-import { EventosES6, EventosES7 } from "./components/Eventos";
+import Padre from "./components/ComunicacionComponentes";
 import Propiedades from "./components/Propiedades";
+import RelojHooks from "./components/RelojHooks";
 import RenderizadoCondicional from "./components/RenderizadoCondicional";
 import RenderizadoElementos from "./components/RenderizadoElementos";
 import Test from "./components/Test";
@@ -34,6 +41,22 @@ function App() {
         <EventosES6 />
         <hr />
         <EventosES7 />
+        <hr />
+        <MasSobreEventos />
+        <hr />
+        <Padre />
+        <hr />
+        {/* <CicloVida /> */}
+        <hr />
+        {/* <AjaxApis /> */}
+        <hr />
+        <ContadorHooks titulo="Contador de seguidores" />
+        <hr />
+        {/* <ScrollHooks /> */}
+        <hr />
+        <RelojHooks />
+        <hr />
+        <AjaxHooks />
       </section>
     </>
   );
