@@ -25,7 +25,7 @@ describe("Prueba del componente 09-promesas", () => {
       })
       // Caso que se esta evaluando
       .catch((err) => {
-        expect(err).toBe(`No se pudo encontrar el héroe con el id: ${id}`);
+        expect(err).toBe('No se pudo encontrar el héroe');
         done();
       });
   });
