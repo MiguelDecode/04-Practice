@@ -6,7 +6,7 @@ exports[`Pruebas en el componente <CounterApp/> debe hacer match con el snapshot
     CounterApp
   </h1>
   <h2>
-    100
+    10
   </h2>
   <button>
     +1
@@ -14,7 +14,9 @@ exports[`Pruebas en el componente <CounterApp/> debe hacer match con el snapshot
   <button>
     -1
   </button>
-  <button>
+  <button
+    aria-label="btn-reset"
+  >
     Reset
   </button>
 </div>
