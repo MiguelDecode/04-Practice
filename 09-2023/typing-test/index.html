@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Typography Test</title>
   </head>
@@ -11,18 +10,18 @@
       <div class="progress__indicator" id="progress-indicator"></div>
     </div>
 
-    <input class="input" type="text" id="input" />
+    <input class="input invisible" type="text" id="input" />
 
     <button id="start-btn">Start</button>
 
-    <div id="quotes-display"></div>
+    <div class="quotes__display" id="quotes-display"></div>
 
     <div class="results none" id="results-container">
       <p class="results__data">
         Correct letters: <span id="correct-letters"></span>
       </p>
       <p class="results__data">Mistakes: <span id="wrong-letters"></span></p>
-      <p class="results__data">WPM: <span id="wpm"></span></p>
+      <p class="results__data">CPS: <span id="wpm"></span></p>
       <button id="restart-btn">Restart</button>
     </div>
 

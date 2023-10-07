@@ -11,9 +11,9 @@ const restartBtn = document.getElementById("restart-btn");
 const displayQuotes = document.getElementById("quotes-display");
 const input = document.getElementById("input");
 
-let correctLetters;
-let wrongLetters;
-let wordsPerMinute;
+let correctLetters = 0;
+let wrongLetters = 0;
+let charactersPerSecond = 0;
 let arrQuote;
 let actualIndex;
 
@@ -27,6 +27,7 @@ const newQuote = async () => {
   arrQuote = Array.from(quote);
 
   const parragraph = document.createElement("p");
+  parragraph.classList.add("quotes__parragraph");
 
   arrQuote.forEach((letter, index) => {
     const span = document.createElement("span");
@@ -54,15 +55,17 @@ const finishTime = () => {
 
   correctElement.textContent = correctLetters;
   wrongElement.textContent = wrongLetters;
-  wpmElement.textContent = wordsPerMinute;
+  wpmElement.textContent = Math.floor(charactersPerSecond / time);
 
   resultsElement.classList.toggle("none", false);
+
+  displayQuotes.innerHTML = "";
 };
 
 const restartGame = () => {
   correctLetters = 0;
   wrongLetters = 0;
-  wordsPerMinute = 0;
+  charactersPerSecond = 0;
   arrQuote = [];
   actualIndex = 0;
   input.value = "";
@@ -72,18 +75,33 @@ const restartGame = () => {
 };
 
 const checkTyping = (event) => {
-  if (event.data === arrQuote[actualIndex]) {
+  let letter = arrQuote[actualIndex];
+  const span = document.querySelectorAll(".quotes__parragraph span")[
+    actualIndex
+  ];
+
+  span.classList.add("cursor");
+
+  if (event.data === letter) {
+    span.classList.toggle("letter", true);
     // Set letter ok
     correctLetters++;
-    actualIndex++;
-    if (actualIndex === arrQuote.length) {
+
+    if (actualIndex === arrQuote.length - 1) {
       input.value = "";
       newQuote();
+      actualIndex = -1;
     }
+
+    actualIndex++;
   } else {
+    span.classList.toggle("letter--error", true);
     // Set letter error
     wrongLetters++;
+    actualIndex++;
   }
+
+  charactersPerSecond++;
 };
 
 // Listeners

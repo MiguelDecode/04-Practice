@@ -4,6 +4,7 @@
   --clr-main: gray;
   --clr-text: white;
   --fz-xxl: 6rem;
+  --fz-xl: 4rem;
 }
 
 *,
@@ -88,6 +89,22 @@ button {
   background-color: var(--clr-main);
   color: var(--clr-text);
   font-size: var(--fz-xxl);
+}
+
+.quotes__parragraph {
+  font-size: var(--fz-xl);
+}
+
+.letter {
+  color: green;
+}
+
+.letter--error {
+  color: red;
+}
+
+.cursor {
+  background-color: lightgrey;
 }
 
 @keyframes advance {
