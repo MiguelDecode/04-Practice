@@ -45,7 +45,7 @@ export default function AjaxHooks() {
           const res = await fetch(el.url);
           const json = await res.json();
 
-          console.log(json);
+          // console.log(json);
 
           let pokemon = {
             id: json.id,

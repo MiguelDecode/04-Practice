@@ -12,6 +12,11 @@ import RelojHooks from "./components/RelojHooks";
 import RenderizadoCondicional from "./components/RenderizadoCondicional";
 import RenderizadoElementos from "./components/RenderizadoElementos";
 import Test from "./components/Test";
+import HooksPersonalizados from "./components/HooksPersonalizados";
+import Referencias from "./components/Referencias";
+import Formulairos from "./components/Formulairos";
+import Estilos from "./components/Estilos";
+import ComponentesEstilizados from "./components/ComponentesEstilizados";
 
 function App() {
   return (
@@ -57,7 +62,25 @@ function App() {
         <RelojHooks />
         <hr />
         <AjaxHooks />
+        <hr />
+        <HooksPersonalizados />
+        <hr />
+        <Referencias />
+        <hr />
+        <Formulairos />
+        <hr />
+        <Estilos />
+        <hr />
+        <ComponentesEstilizados />
       </section>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 }
