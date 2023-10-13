@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #282c34;
+
+  display: grid;
+  place-content: center;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Styles */
+.container {
+  position: relative;
+  height: 31.25em;
+  width: 31.25em;
+}
+
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 15.62em;
+  width: 15.62em;
+  background-color: #abb2bf;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: inset -20px -20px 5px hsl(220, 13%, 58%),
+    0px 0px 20px 10px rgba(255, 255, 255, 0.25);
+}
+
+.planet:before {
+  content: "";
+  position: absolute;
+  height: 1.5em;
+  width: 1.5em;
+  background-color: hsl(220, 13%, 58%);
+  top: 6em;
+  left: 2em;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 5px hsl(220, 13%, 58%);
+}
+
+.planet:after {
+  content: "";
+  position: absolute;
+  height: 2.5em;
+  width: 2.5em;
+  background-color: hsl(220, 13%, 58%);
+  top: 8em;
+  left: 4em;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 5px hsl(220, 13%, 58%);
+}
+
+.satellite {
+  height: 2em;
+  width: 2em;
+  background-color: #e06c75;
+  border-radius: 50%;
+  position: relative;
+  left: 5em;
+  bottom: -20em;
+  animation: spin 5s infinite;
+  z-index: 1;
+  box-shadow: inset -5px -5px 3px hsl(355, 65%, 55%);
+}
+
+@keyframes spin {
+  49% {
+    z-index: 1;
+  }
+
+  50% {
+    bottom: -9.3em;
+    left: 23em;
+    z-index: -1;
+  }
+
+  100% {
+    z-index: -1;
+  }
+}
