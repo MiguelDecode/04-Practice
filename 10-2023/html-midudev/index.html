@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#09f" />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/web-dev.webp"
+      type="image/x-icon"
+    />
+
+    <!-- Description -->
+    <meta
+      name="description"
+      content="Curso de HTML de Midudev para repasar conceptos"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Curso de HTML por Midudev" />
+    <meta
+      property="og:description"
+      content="Curso de HTML por Midudev, Ingeniero de software con mas de 15 años de experiencia"
+    />
+    <meta property="og:images" content="./assets/web-dev.webp" />
+    <meta
+      property="og:image:alt"
+      content="Fotografía de una libreta con mas materiales de oficina que tiene escrito en letras grandes 'Web Development'"
+    />
+
+    <link rel="alternate" href="https://midu.dev/en" hreflang="en-GB" />
+    <link rel="canonical" href="https://midu.dev" />
+
+    <title>Curso de HTML por Midudev</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Title XXL</h1>
+        <h2>Title XL</h2>
+        <h3>Title L</h3>
+        <h4>Title M</h4>
+        <h5>Title S</h5>
+        <h6>Title XS</h6>
+      </section>
+
+      <section>
+        <p>
+          Lorem ipsum dolor, <strong>sit amet consectetur</strong> adipisicing
+          elit. Error ipsa similique et nemo eligendi consectetur numquam
+          mollitia? Corrupti, tempora. Adipisci assumenda perferendis non quia
+          numquam repellat, voluptatem eaque necessitatibus in?
+        </p>
+        <blockquote>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea incidunt
+          cupiditate nesciunt accusamus, voluptatum fugit. Illum harum amet
+          animi ipsam consequuntur explicabo quo, nobis vel eaque molestiae,
+          quibusdam doloribus officia?
+        </blockquote>
+        <cite>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugit
+          aliquid aspernatur facere commodi natus quisquam blanditiis ipsam,
+          rerum molestiae error, eos quos sit nemo, cumque fugiat nam. Deserunt,
+          nisi?
+        </cite>
+      </section>
+
+      <section>
+        <ul>
+          <li class="list-item">Spring</li>
+          <li class="list-item">Summer</li>
+          <li class="list-item">Autum</li>
+          <li class="list-item">Winter</li>
+        </ul>
+
+        <ol>
+          <li class="list-item">One</li>
+          <li class="list-item">Two</li>
+          <li class="list-item">Three</li>
+          <li class="list-item">Four</li>
+          <li class="list-item">Five</li>
+        </ol>
+      </section>
+
+      <section>
+        <img
+          src="./assets/web-dev.webp"
+          alt="Imagen de fondo sobre desarollo web de una libreta y otras herramientas típicas en una oficina"
+          title="Desarollo Web"
+          width="200"
+          height="200"
+          id="notebook-image"
+          loading="lazy"
+        />
+      </section>
+
+      <section>
+        <!--         <label for="name">Nombre</label>
+        <input type="text" name="name" id="name" /> -->
+
+        <label for="birthdate">Fecha de Nacimiento</label>
+        <input type="datetime" name="birthdate" id="birthdate" />
+
+        <label for="profile">Foto de Avatar</label>
+        <input type="file" name="profile" id="profile" />
+
+        <label for="age">Edad</label>
+        <input type="range" name="age" id="age" />
+      </section>
+
+      <section>
+        <div role="button">Haz click aqui!!</div>
+
+        <a href="http://" target="_blank" rel="noopener noreferrer"></a>
+        <a href="mailto:midu@gmail.com">Mandor un correo</a>
+        <a href="tel:+34987564321">Llamar por teléfono</a>
+      </section>
+
+      <section>
+        <form method="post" action="/">
+          <fieldset>
+            <legend>Información personal</legend>
+
+            <label for="name">Nombre:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Miguel Decode"
+            />
+
+            <label for="email">
+              Email:
+              <input type="email" name="email" id="email" placeholder="email" />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Información adicional</legend>
+            <label for="month">Mes</label>
+            <input type="month" name="month" id="month" />
+
+            <label for="phone">Teléfono:</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="687 432 380"
+            />
+          </fieldset>
+
+          <input type="submit" value="Enviar contacto" />
+        </form>
+      </section>
+
+      <section>
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>Que estudios tienes?</summary>
+          <p>
+            Estudié en la universidad de Vilanova una Ingeniría de Informática
+            durante cinco años.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            Cuales son tus lenguajes de programación preferidos?
+          </summary>
+          <p>
+            Estudié en la universidad de Vilanova una Ingeniría de Informática
+            durante cinco años.
+          </p>
+        </details>
+
+        <details>
+          <summary>Como te gusta pasar tu tiempo libre?</summary>
+          <p>
+            Estudié en la universidad de Vilanova una Ingeniría de Informática
+            durante cinco años.
+          </p>
+        </details>
+      </section>
+
+      <section>
+        <video
+          src="./assets/animal.mp4"
+          poster="./assets/web-dev.webp"
+          autoplay
+          controls
+        ></video>
+
+        <audio src="./assets/lofi-chill.mp3" controls></audio>
+      </section>
+
+      <section>
+        <iframe
+          width="560"
+          height="315"
+          src="https://midu.dev"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <section>
+        <dialog id="modal">
+          <h3>Sabías que puedes abrir un modal así?</h3>
+          <p>Y es totalmente nativo!</p>
+          <button id="close">Cerrar modal</button>
+        </dialog>
+
+        <button id="open">Ver más información</button>
+
+        <script>
+          const dialogModal = document.getElementById("modal");
+          const closeBtn = document.getElementById("close");
+          const openBtn = document.getElementById("open");
+
+          openBtn.addEventListener("click", () => {
+            dialogModal.showModal();
+          });
+
+          closeBtn.addEventListener("click", () => {
+            dialogModal.close();
+          });
+        </script>
+      </section>
+    </main>
+    <footer>
+      <small>&copy; Copyright 2018, Example Corporation</small>
+    </footer>
+  </body>
+</html>
