@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  background-color: #e0f1fa;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.gallery {
+  position: absolute;
+  top: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25rem;
+}
+
+.image {
+  border-radius: 2rem;
+  position: absolute;
+  content: "";
+  border: 1rem solid white;
+  cursor: pointer;
+  transition: z-index 0.3s ease-in-out;
+}
+
+.image:first-child {
+  transform: rotate(23deg);
+}
+
+.image:nth-child(2) {
+  transform: rotate(328deg);
+}
+
+.image:nth-child(3) {
+  transform: rotate(169deg);
+}
