@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Styles */
+
+body {
+  display: grid;
+  place-content: center;
+}
+
+.symetrical-grid {
+  width: 100%;
+}
+
+.symetrical-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.image-grid {
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 28rem) {
+  .symetrical-grid {
+    max-width: calc(100vw - 4rem);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .symetrical-grid img:nth-child(1) {
+    grid-area: 1/1/2/3;
+  }
+
+  .symetrical-grid img:nth-child(2) {
+    grid-area: 1/3/2/5;
+  }
+
+  .symetrical-grid img:nth-child(3) {
+    grid-area: 2/1/3/2;
+  }
+
+  .symetrical-grid img:nth-child(4) {
+    grid-area: 3/1/4/2;
+  }
+
+  .symetrical-grid img:nth-child(5) {
+    grid-area: 2/2/4/4;
+  }
+
+  .symetrical-grid img:nth-child(6) {
+    grid-area: 2/4/3/4;
+  }
+
+  .symetrical-grid img:nth-child(7) {
+    grid-area: 3/4/4/4;
+  }
+
+  .symetrical-grid img:nth-child(8) {
+    grid-area: 4/1/5/3;
+  }
+
+  .symetrical-grid img:nth-child(9) {
+    grid-area: 4/3/5/5;
+  }
+}
+
+@media screen and (min-width: 56rem) {
+  .symetrical-grid {
+  max-width: calc(100vw - 8rem);
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .symetrical-grid img:nth-child(1) {
+    grid-area: 3/1/5/2;
+  }
+
+  .symetrical-grid img:nth-child(2) {
+    grid-area: 2/2/6/3;
+  }
+
+  .symetrical-grid img:nth-child(3) {
+    grid-area: 1/3/5/4;
+  }
+
+  .symetrical-grid img:nth-child(4) {
+    grid-area: 5/3/7/4;
+  }
+
+  .symetrical-grid img:nth-child(5) {
+    grid-area: 1/4/7/6;
+  }
+
+  .symetrical-grid img:nth-child(6) {
+    grid-area: 1/6/3/7;
+  }
+
+  .symetrical-grid img:nth-child(7) {
+    grid-area: 3/6/7/7;
+  }
+
+  .symetrical-grid img:nth-child(8) {
+    grid-area: 2/7/6/8;
+  }
+
+  .symetrical-grid img:nth-child(9) {
+    grid-area: 3/8/5/9;
+  }
+}
