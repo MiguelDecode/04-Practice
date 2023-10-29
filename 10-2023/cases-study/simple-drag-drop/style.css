@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  background-color: #e5edfa;
+  display: grid;
+  place-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+.draggable {
+  position: absolute;
+  width: 9em;
+  height: 9em;
+  border-radius: 0.5em;
+  cursor: move;
+}
+
+.blue {
+  background-color: #006eff;
+  top: 0;
+  left: 0;
+}
+
+.red {
+  background-color: red;
+  top: 0;
+  right: 0;
+}
+
+.yellow {
+  background-color: yellow;
+  bottom: 0;
+  left: 0;
+}
+
+.green {
+  background-color: green;
+  bottom: 0;
+  right: 0;
+}
+
+#drop-point {
+  position: relative;
+  width: 15em;
+  height: 15em;
+  border: 2px dashed black;
+  background-color: aliceblue;
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
