@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  scrollbar-width: none;
+  display: grid;
+  place-content: center;
+}
+
+.board {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.board__form {
+  padding: 2rem 2rem 0;
+}
+
+.board__input {
+  padding: 0.75rem;
+  margin-right: 0.75rem;
+  width: 225px;
+
+  border-radius: 0.25rem;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0 0 0 / 0.25);
+  background-color: white;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.board__submit {
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0 0 0 / 0.25);
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.todo__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+}
+
+.todo__heading {
+  font-size: 1.375rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.todo__col {
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  box-shadow: 0 5px 15px rgba(0 0 0 / 0.25);
+  padding: 0.875rem;
+  border-radius: 0.25rem;
+  min-height: 7.5rem;
+  flex-shrink: 0;
+}
+
+.todo__task {
+  background-color: white;
+  margin: 0.25rem;
+  color: black;
+  box-shadow: 0 5px 15px rgba(0 0 0 / 0.25);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: move;
+}
+
+.todo__task--done {
+  text-decoration: line-through;
+}
+
+.dragging {
+  scale: 1.05;
+  box-shadow: 0 5px 15px rgba(0 0 0 / 0.25);
+  background-color: rgb(50 50 50);
+  color: white;
+}

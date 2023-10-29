@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and Drop Kanban Board</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Javascript -->
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main class="board">
+      <form class="board__form" id="todo-form">
+        <input class="board__input"  type="text" placeholder="New TODO..." id="todo-input" />
+        <button class="board__submit" id="todo-submit" type="submit">Add +</button>
+      </form>
+
+      <section class="todo__container">
+        <div class="todo__col" id="todo">
+          <h3 class="todo__heading">TODO</h3>
+          <p class="todo__task" draggable="true">Get groceries</p>
+          <p class="todo__task" draggable="true">Feed the dogs</p>
+          <p class="todo__task" draggable="true">More the lawn</p>
+        </div>
+
+        <div class="todo__col" id="doing">
+          <h3 class="todo__heading">DOING</h3>
+          <p class="todo__task" draggable="true">Study for the exams</p>
+        </div>
+
+        <div class="todo__col" id="done">
+          <h3 class="todo__heading">DONE</h3>
+          <p class="todo__task todo__task--done" draggable="true">Read new report</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
