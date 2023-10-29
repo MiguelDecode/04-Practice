@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple Dice Roller</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JavaScript -->
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Multiple Dice Roller</h1>
+    </header>
+    <main class="roller">
+      <section class="roller__board"></section>
+
+      <section class="roller__dices">
+        <img
+          class="dice"
+          id="d4"
+          src="./assets/d4.svg"
+          alt="Dice of four sides"
+        />
+        <img
+          class="dice"
+          id="d6"
+          src="./assets/d6.svg"
+          alt="Dice of six sides"
+        />
+        <img
+          class="dice"
+          id="d8"
+          src="./assets/d8.svg"
+          alt="Dice of eight sides"
+        />
+        <img
+          class="dice"
+          id="d10"
+          src="./assets/d10.svg"
+          alt="Dice of ten sides"
+        />
+        <img
+          class="dice"
+          id="d12"
+          src="./assets/d12.svg"
+          alt="Dice of ten sides"
+        />
+        <img
+          class="dice"
+          id="d20"
+          src="./assets/d20.svg"
+          alt="Dice of twenty sides"
+        />
+      </section>
+
+      <div class="roller__btns">
+      <button class="roller__btn" id="roll-btn">Roll Dices</button>
+      <button class="roller__btn" id="reset-btn">Reset Dices</button>
+
+      </div>
+
+
+      <div class="roller__results" id="result"></div>
+      <p class="roller__total">Total Score: <span id="total">0</span></p>
+    </main>
+  </body>
+</html>
