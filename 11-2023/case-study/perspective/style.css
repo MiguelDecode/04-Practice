@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+.frame {
+  width: 500px;
+  height: 500px;
+  /* border: 3px solid rebeccapurple; */
+  perspective: 500px;
+}
+
+.shape {
+  width: 500px;
+  height: 500px;
+  background-color: black;
+  transform: rotateX(45deg);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.intro {
+  color: goldenrod;
+  font-size: 2rem;
+  line-height: 2em;
+  transform: translateY(100%);
+  animation: linear 20s  move;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(-120%);
+  }
+}
