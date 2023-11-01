@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* .item h1,
+.item h2,
+.item h3,
+.item h4,
+.item h5,
+.item h6 {
+  color: blue;
+} */
+
+/* .item :is(h1, h2, h3, h4, h5, h6) {
+  color: red;
+} */
+
+.item :where(h1, h2, h3, h4, h5, h6) {
+  color: red;
+}
+
+.item :not(h3) {
+  color: green;
+}
+
+.review:has(button) .content {
+  filter: blur(8px);
+}
+
+
