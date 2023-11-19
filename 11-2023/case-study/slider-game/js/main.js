@@ -1,93 +1,72 @@
+import { getTokenPosition } from "./getTokenPosition.js";
+import { drawTokens } from "./drawTokens.js";
+import { checkMoves } from "./checkMoves.js";
+
 const boardElement = document.querySelector(".board");
 
-// Array of arrays
-const matrix = [
-  ["1", "2", "3"],
-  ["4", "5", "6"],
-  ["7", "8", ""],
-];
+const matrixValues = ["1", "2", "3", "4", "5", "6", "7", "8", ""];
 
-const checkWinCondition = () => {};
+const sortRandomly = () => {
+  matrixValues.sort(() => Math.floor(Math.random() - 0.5));
+};
 
-// Create and insert all the tokens in the board base on matrix
-const drawTokens = () => {
-  boardElement.innerHTML = "";
-  const fragment = document.createDocumentFragment();
+let matrix = [[], [], []];
 
-  matrix.forEach((row) => {
-    row.forEach((token) => {
-      const tokenElement = document.createElement("div");
-      if (token === "") {
-        tokenElement.classList.add("board__token--empty");
-      } else {
-        tokenElement.classList.add("board__token");
-      }
-      tokenElement.textContent = token;
-      fragment.appendChild(tokenElement);
-    });
-  });
-
-  boardElement.appendChild(fragment);
+const createMatrix = () => {
+  sortRandomly();
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      matrix[i].push(matrixValues.pop());
+    }
+  }
 };
 
 const runGame = () => {
-  drawTokens();
-  checkWinCondition();
-};
-
-const tokenPosition = (content) => {
-  let tokenRow, tokenCol;
-  matrix.forEach((row, index) => {
-    let col = row.findIndex((token) => token === content);
-    if (col !== -1) {
-      tokenRow = index;
-      tokenCol = col;
-    }
-  });
-  return [tokenRow, tokenCol];
+  createMatrix();
+  drawTokens(matrix, boardElement);
 };
 
 const listenTokens = (event) => {
   if (event.target.classList.value === "board__token") {
     const tokenContent = event.target.textContent;
-    const [row, col] = tokenPosition(tokenContent);
+    const [row, col] = getTokenPosition(tokenContent, matrix);
 
-    checkMoves(row, col);
+    checkMoves(row, col, matrix);
   }
 };
 
-const moveTokens = (tokenRow, tokenCol, emptyRow, emptyCol) => {
+const exchangeTokens = (tokenRow, tokenCol, emptyRow, emptyCol) => {
   let temp;
   temp = matrix[tokenRow][tokenCol];
   matrix[tokenRow][tokenCol] = "";
   matrix[emptyRow][emptyCol] = temp;
 
-  drawTokens();
+  drawTokens(matrix, boardElement);
 };
 
-const checkMoves = (tokenRow, tokenCol) => {
-  const [emptyRow, emptyCol] = tokenPosition("");
+/* const checkMoves = (tokenRow, tokenCol) => {
+  const [emptyRow, emptyCol] = getTokenPosition("", matrix);
 
   if (tokenCol - emptyCol === -1 && emptyRow === tokenRow) {
     // console.log("Puede moverse a la derecha");
-    moveTokens(tokenRow, tokenCol, emptyRow, emptyCol);
+    exchangeTokens(tokenRow, tokenCol, emptyRow, emptyCol);
   }
 
   if (tokenCol - emptyCol === 1 && emptyRow === tokenRow) {
     // console.log("Puede moverse a la izquierda");
-    moveTokens(tokenRow, tokenCol, emptyRow, emptyCol);
+    exchangeTokens(tokenRow, tokenCol, emptyRow, emptyCol);
   }
 
   if (tokenRow - emptyRow === -1 && tokenCol === emptyCol) {
     // console.log("Puede moverse hacia abajo");
-    moveTokens(tokenRow, tokenCol, emptyRow, emptyCol);
+    exchangeTokens(tokenRow, tokenCol, emptyRow, emptyCol);
   }
 
   if (tokenRow - emptyRow === 1 && tokenCol === emptyCol) {
     // console.log("Puede moverse hacia arriba");
-    moveTokens(tokenRow, tokenCol, emptyRow, emptyCol);
+    exchangeTokens(tokenRow, tokenCol, emptyRow, emptyCol);
   }
-};
+}; */
 
 // Listeners
 
