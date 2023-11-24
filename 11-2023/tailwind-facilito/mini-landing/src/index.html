@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Stylesheet -->
+    <link href="../dist/css/tailwind.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="bg-blue-500">
+      <nav
+        class="py-6 text-white grid justify-items-center items-center gap-6 wrapper md:grid-flow-col md:justify-between"
+      >
+        <a href="./">
+          <h2 class="text-3xl font-extrabold">Landing.</h2>
+        </a>
+        <ul class="flex gap-4">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <section
+        class="wrapper py-14 flex flex-col items-center gap-12 md:flex-row min-h-[600px]"
+      >
+        <img
+          class="max-w-lg w-full md:w-2/5"
+          src="./assets/hero.svg"
+          alt="Imagen de una persona trabajando en el ordenador"
+        />
+
+        <div class="text-white space-y-6 text-center md:w-3/5 md:text-left">
+          <h1 class="text-3xl font-bold md:text-4xl">
+            Mi nombre es Jordan Alexander, y será un placer ayudarte!
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+            praesentium corporis iste. Harum possimus quos, rerum illum
+            repudiandae asperiores recusandae.
+          </p>
+          <a
+            href="#"
+            class="inline-block bg-slate-700 py-4 px-8 rounded-xl font-bold"
+            >Contáctame Ahora!</a
+          >
+        </div>
+      </section>
+    </header>
+    <main>
+      <section class="wrapper py-20 text-center" id="skills">
+        <h2 class="text-3xl font-bold md:text-4xl">Nuestras habilidades! 🖐</h2>
+
+        <div
+          class="mt-12 grid gap-8 max-w-md mx-auto md:grid-flow-col md:max-w-none auto-cols-fr"
+        >
+          <article class="space-y-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="fill-orange-700 w-20 mx-auto"
+              data-darkreader-inline-fill=""
+            >
+              <path
+                d="M4.136 3.012h15.729l-1.431 16.15-6.451 1.826-6.414-1.826-1.433-16.15zm5.266 7.302-.173-2.035 7.533.002.173-1.963-9.87-.002.522 5.998h6.835l-.243 2.566-2.179.602-2.214-.605-.141-1.58H7.691l.247 3.123L12 17.506l4.028-1.08.558-6.111H9.402v-.001z"
+              ></path>
+            </svg>
+            <h3 class="text-slate-900 text-xl font-bold">HTML 5 + Figma</h3>
+            <p class="w-2/3 text-slate-600 mx-auto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              provident exercitationem itaque tenetur perspiciatis optio vero
+              illo doloremque reprehenderit quibusdam!
+            </p>
+          </article>
+
+          <article class="space-y-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="fill-blue-700 w-20 mx-auto"
+              viewBox="0 0 24 24"
+              data-darkreader-inline-fill=""
+            >
+              <path
+                d="M4.192 3.143h15.615l-1.42 16.034-6.404 1.812-6.369-1.813L4.192 3.143zM16.9 6.424l-9.8-.002.158 1.949 7.529.002-.189 2.02H9.66l.179 1.913h4.597l-.272 2.62-2.164.598-2.197-.603-.141-1.569h-1.94l.216 2.867L12 17.484l3.995-1.137.905-9.923z"
+              ></path>
+            </svg>
+            <h3 class="text-slate-900 text-xl font-bold">CSS + Tailwind</h3>
+            <p class="w-2/3 text-slate-600 mx-auto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              provident exercitationem itaque tenetur perspiciatis optio vero
+              illo doloremque reprehenderit quibusdam!
+            </p>
+          </article>
+
+          <article class="space-y-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="fill-yellow-400 w-20 mx-auto"
+              viewBox="0 0 24 24"
+              data-darkreader-inline-fill=""
+            >
+              <path
+                d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.529.113-.484.687-.629 1.137-.495.293.09.563.315.732.676.775-.507.775-.507 1.316-.844-.203-.314-.304-.451-.439-.586-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754-.855.968-.608 2.655.427 3.354 1.023.765 2.521.933 2.712 1.653.18.878-.652 1.159-1.475 1.058-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832 1.305 1.316 4.568 1.249 5.153-.754.021-.067.18-.528.056-1.237l.034.049zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354 0 .924.047 1.772-.104 2.033-.247.517-.886.451-1.175.359-.297-.146-.448-.349-.623-.641-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137.641.383 1.502.507 2.404.305.588-.17 1.095-.519 1.358-1.059.384-.697.302-1.553.299-2.509.008-1.541 0-3.083 0-4.635l.003-.042z"
+              ></path>
+            </svg>
+            <h3 class="text-slate-900 text-xl font-bold">JS + React</h3>
+            <p class="w-2/3 text-slate-600 mx-auto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              provident exercitationem itaque tenetur perspiciatis optio vero
+              illo doloremque reprehenderit quibusdam!
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 py-20" id="projects">
+        <div class="wrapper text-center">
+          <h2 class="text-3xl font-bold mb-6 md:text-4xl">Nuestro trabajo!</h2>
+          <p class="font-light text-xl text-slate-500 w-2/3 mx-auto">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            alias provident quo error magnam adipisci quia laboriosam ullam
+            dolorem dolorum?
+          </p>
+
+          <div
+            class="mt-12 grid gap-12 place-content-center md:grid-flow-col auto-cols-fr"
+          >
+            <article class="w-4/5 mx-auto space-y-4">
+              <img
+                class="aspect-square object-cover rounded-2xl"
+                src="./assets/laptop.jpg"
+                alt="Un portátil"
+              />
+              <h3 class="text-2xl font-medium">Apple</h3>
+              <p class="text-slate-500 font-light">
+                Lorem ipsum dolor sit amet.
+              </p>
+            </article>
+
+            <article class="w-4/5 mx-auto space-y-4">
+              <img
+                class="aspect-square object-cover rounded-2xl"
+                src="./assets/coke.jpg"
+                alt="Un portátil"
+              />
+              <h3 class="text-2xl font-medium">Coca Cola</h3>
+              <p class="text-slate-500 font-light">
+                Lorem ipsum dolor sit amet.
+              </p>
+            </article>
+
+            <article class="w-4/5 mx-auto space-y-4">
+              <img
+                class="aspect-square object-cover rounded-2xl"
+                src="./assets/nike.jpg"
+                alt="Un portátil"
+              />
+              <h3 class="text-2xl font-medium">Nike</h3>
+              <p class="text-slate-500 font-light">
+                Lorem ipsum dolor sit amet.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="wrapper py-32 grid gap-12 md:grid-flow-col auto-cols-fr items-center"
+      >
+        <div>
+          <h2 class="text-3xl font-bold">
+            Dame tu correo, y te cotactare con brevedad.
+          </h2>
+          <p class="font-light text-slate-600 text-lg mt-4">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae
+            ipsum doloribus, libero inventore est asperiores praesentium laborum
+            neque rem eligendi voluptas, numquam repudiandae totam facere.
+          </p>
+        </div>
+
+        <form class="grid gap-6">
+          <input
+            type="email"
+            placeholder="usuario@mail.com"
+            class="border border-slate-900 p-4 rounded-lg"
+          />
+          <input
+            type="submit"
+            value="Contáctame!"
+            class="bg-orange-500 text-white py-4 px-10 rounded-lg"
+          />
+        </form>
+      </section>
+    </main>
+
+    <footer class="bg-blue-100">
+      <div class="wrapper py-20">
+        <section
+          class="flex flex-col text-center gap-6 border-b-2 border-slate-400 pb-8 md:flex-row md:justify-between md:item-center md:pb-10"
+        >
+          <h2 class="text-3xl text-slate-900 font-extrabold">Landing</h2>
+          <p class="text-slate-600">micorreo@micorreo.com</p>
+        </section>
+
+        <section
+          class="flex flex-col gap-6 text-center pt-8 md:flex-row md:justify-between md:item-center md:pt-10"
+        >
+          <ul class="flex gap-6 justify-center">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+
+          <ul
+            class="grid grid-flow-col auto-cols-max gap-8 justify-center text-slate-900"
+          >
+            <li>
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="fill-blue-500 w-[32px]"
+                  viewBox="0 0 24 24"
+                  data-darkreader-inline-fill=""
+                >
+                  <path
+                    d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="fill-blue-500 w-[32px]"
+                  viewBox="0 0 24 24"
+                  data-darkreader-inline-fill=""
+                >
+                  <path
+                    d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"
+                  ></path>
+                  <circle cx="16.806" cy="7.207" r="1.078"></circle>
+                  <path
+                    d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"
+                  ></path></svg
+              ></a>
+            </li>
+            <li>
+              <a href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="fill-blue-500 w-[32px]"
+                  viewBox="0 0 24 24"
+                  data-darkreader-inline-fill=""
+                >
+                  <path
+                    d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"
+                  ></path></svg
+              ></a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
