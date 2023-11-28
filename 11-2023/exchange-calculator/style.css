@@ -1,0 +1,105 @@
+:root {
+  --primary-color: #5fbaa7;
+  --bg-clr: #f4f4f4;
+  --border-clr: #dedede;
+  --btn-clr: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  background-color: var(--bg-clr);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.money-img {
+  width: 150px;
+  margin-inline: auto;
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn {
+  color: var(--btn-clr);
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.currency {
+  padding: 2.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.currency select {
+  padding: 0.625rem 1.25rem 0.625rem 0.625rem;
+  appearance: none;
+  border: 1px solid var(--border-clr);
+}
+
+.currency input {
+  border: 0;
+  background-color: transparent;
+  font-size: 2rem;
+  text-align: right;
+}
+
+.currency input:focus {
+  outline: none;
+}
+
+.swap-rate-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rate {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  padding: 0 0.625rem;
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: 0;
+}
