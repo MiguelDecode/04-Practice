@@ -14,3 +14,7 @@ const closeNav = () => {
 // Event Listeners
 btnClose.addEventListener("click", closeNav);
 btnOpen.addEventListener("click", openNav);
+
+document.addEventListener("click", (event) => {
+  if (event.target.matches("nav a")) closeNav();
+});
