@@ -1,0 +1,105 @@
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Utilities */
+.wrapper {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.openbtn,
+.closebtn {
+  cursor: pointer;
+  width: 3rem;
+  border: none;
+  background-color: transparent;
+  transition: fill 0.5s ease-in-out;
+}
+
+.openbtn {
+  fill: black;
+}
+
+.openbtn:hover,
+.closebtn:hover {
+  fill: #666;
+}
+
+.closebtn {
+  position: absolute;
+  top: .80rem;
+  right: 1.5625rem;
+  fill: white;
+}
+
+main {
+  transition: margin-left 0.5s;
+  padding: 1rem;
+}
+
+main p {
+  text-align: justify;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
