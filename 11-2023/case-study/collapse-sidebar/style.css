@@ -1,3 +1,4 @@
+/* Reset */
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -35,6 +36,8 @@ select {
   margin-inline: auto;
 }
 
+/* Sidebar */
+
 .sidebar {
   height: 100%;
   width: 0;
@@ -46,6 +49,10 @@ select {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+}
+
+.sidebar.show {
+  width: 250px;
 }
 
 .sidebar a {
@@ -60,6 +67,8 @@ select {
 .sidebar a:hover {
   color: #f1f1f1;
 }
+
+/* Menu */
 
 .openbtn,
 .closebtn {
@@ -81,25 +90,22 @@ select {
 
 .closebtn {
   position: absolute;
-  top: .80rem;
+  top: 0.8rem;
   right: 1.5625rem;
   fill: white;
 }
+
+/* Main */
 
 main {
   transition: margin-left 0.5s;
   padding: 1rem;
 }
 
-main p {
-  text-align: justify;
+main.show {
+  margin-left: 250px;
 }
 
-@media screen and (max-height: 450px) {
-  .sidebar {
-    padding-top: 15px;
-  }
-  .sidebar a {
-    font-size: 18px;
-  }
+main p {
+  text-align: justify;
 }

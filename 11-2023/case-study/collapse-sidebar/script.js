@@ -1,14 +1,16 @@
 const btnClose = document.getElementById("btn-close");
 const btnOpen = document.getElementById("btn-open");
+const sidebarElement = document.getElementById("sidebar");
+const mainElement = document.getElementById("main");
 
 const openNav = () => {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
+  sidebarElement.classList.add("show");
+  mainElement.classList.add("show");
 };
 
 const closeNav = () => {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
+  sidebarElement.classList.remove("show");
+  mainElement.classList.remove("show");
 };
 
 // Event Listeners
