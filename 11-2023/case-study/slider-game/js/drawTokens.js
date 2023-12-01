@@ -1,6 +1,5 @@
 import { checkWinCondition } from "./checkWinCondition.js";
 
-// Create and insert all the tokens in the board base on matrix
 export const drawTokens = (matrix) => {
   const boardElement = document.querySelector(".board");
   boardElement.innerHTML = "";

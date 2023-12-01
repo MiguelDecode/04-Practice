@@ -1,4 +1,3 @@
-
 export const checkWinCondition = (matrix) => {
   if (
     matrix[0][0] === "1" &&
