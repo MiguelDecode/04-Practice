@@ -1,0 +1,85 @@
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Styles */
+body {
+  font-family: "Share Tech Mono", monospace;
+  background-color: aliceblue;
+  display: grid;
+  place-content: center;
+}
+
+.board,
+.info {
+  width: 31.25rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5625rem;
+  margin-top: 0.625rem;
+}
+
+.info__score {
+  display: inline-flex;
+}
+
+.info__btn {
+  background-color: #f35a69;
+  font-size: 1.5625rem;
+  border: none;
+  color: white;
+}
+
+.square {
+  aspect-ratio: 1;
+}
+
+.square--empty {
+  background-color: #456998;
+}
+
+.square--snake {
+  background-color: #ccf471;
+}
+
+.square--food {
+  background-color: #f35a69;
+}
+
+.game-over {
+  display: none;
+}
