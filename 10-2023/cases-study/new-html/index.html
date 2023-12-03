@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>State of HTML 2023</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JavaScript -->
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section id="section-1" class="section">
+        <h2>Normal Datalist</h2>
+        <input list="languages" id="language-choice" name="language-choice" />
+        <datalist id="languages">
+          <option value="JavaScript"></option>
+          <option value="Java"></option>
+          <option value="Swift"></option>
+          <option value="Go"></option>
+          <option value="PHP"></option>
+        </datalist>
+
+        <h2>Time Datalist</h2>
+        <input type="time" list="popularHours" />
+        <datalist id="popularHours">
+          <option value="12:00"></option>
+          <option value="13:00"></option>
+          <option value="14:00"></option>
+          <option value="15:00"></option>
+          <option value="16:00"></option>
+        </datalist>
+      </section>
+
+      <section id="section-2" class="section">
+        <form action="server.cgi" method="post" enctype="multipart/form-data">
+          <input type="file" name="image" accept="image/*" capture="user" />
+          <input
+            type="file"
+            name="video"
+            accept="video/*"
+            capture="environment"
+          />
+          <input type="submit" value="Upload" />
+        </form>
+      </section>
+
+      <section id="section-3" class="section">
+        <!-- Modal semantic tag -->
+        <dialog>
+          <button autofocus id="close-modal">Close</button>
+          <p>Text inside the modal</p>
+        </dialog>
+        <button id="open-modal">Show the modal</button>
+      </section>
+
+      <section id="section-4" class="section">
+        <details>
+          <summary>Details 1</summary>
+          Something small enough to escape casual notice.
+        </details>
+        <details>
+          <summary>Details 2</summary>
+          Something small enough to escape casual notice.
+        </details>
+        <details open>
+          <summary>Details 3</summary>
+          Something small enough to escape casual notice.
+        </details>
+      </section>
+
+      <section id="section-5" class="section">
+        // Show a element meanwhile the focus is on the button
+        <button popovertarget="my-popover">Open Popover</button>
+
+        // Effect blur to close
+        <div popover id="my-popover">Greetings to all, devs!</div>
+      </section>
+
+      <section id="section-6" class="section">
+        <h1>Netflix</h1>
+        <!-- Semantic tag for include a search navbar to find a query -->
+        <search>
+          <form>
+            <label for="movie">Search a film</label>
+            <input type="search" name="query" id="movie" />
+            <input type="submit" value="Search" />
+          </form>
+        </search>
+      </section>
+    </main>
+  </body>
+</html>
