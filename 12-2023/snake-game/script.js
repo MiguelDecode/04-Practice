@@ -6,7 +6,7 @@ const gameOverMsg = document.getElementById("game-over");
 
 // Game Settings
 const boardSize = 10;
-const gameSpeed = 1000;
+const gameSpeed = 500;
 
 const squareTypes = {
   emptySquare: 0,
@@ -55,6 +55,12 @@ const gameOver = () => {
   startBtn.disabled = false;
 };
 
+const createRandomFood = () => {
+  const randomEmptySquare =
+    emptySquares[Math.floor(Math.random() * emptySquares.length)];
+  drawSquare(randomEmptySquare, "square--food");
+};
+
 const addFood = () => {
   score++;
   updateScore();
@@ -72,13 +78,14 @@ const moveSnake = () => {
     newSquare < 0 ||
     newSquare > boardSize * boardSize ||
     (direction === "ArrowRight" && col == 0) ||
-    (direction === "ArrowLeft" && col == 9) ||
-    boardSquares[row][col] === squareTypes.snakeSquare
+    (direction === "ArrowLeft" && col == 9 ||
+    boardSquares[row][col] === squareTypes.snakeSquare)
   ) {
     gameOver();
   } else {
     snake.push(newSquare);
     if (boardSquares[row][col] === squareTypes.foodSquare) {
+      console.log('Anadir una comida nueva')
       addFood();
     } else {
       const emptySquare = snake.shift();
@@ -87,6 +94,7 @@ const moveSnake = () => {
     drawSnake();
   }
 };
+
 
 const setDirection = (newDirection) => {
   direction = newDirection;
@@ -163,3 +171,4 @@ const startGame = () => {
 startBtn.addEventListener("click", startGame);
 
 // TODO Revisar fallo de que no aparece mas comida
+// TODO Revisar la serpiente no aumenta de tamaño
