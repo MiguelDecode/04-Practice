@@ -35,4 +35,6 @@ select {
   font: inherit;
 }
 
-
+hr {
+  margin-block: 3rem;
+}
