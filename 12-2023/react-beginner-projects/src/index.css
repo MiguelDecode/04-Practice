@@ -1,0 +1,38 @@
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+  color-scheme: light dark;
+  text-rendering: optimizeLegibility;
+
+  display: grid;
+  place-content: center;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
