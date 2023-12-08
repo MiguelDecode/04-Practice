@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap");
+
+:root {
+  --terminal-clr: #292b36;
+  --border-radius: 0.25rem;
+  --bg-clr: #5c4b7a;
+  --text-clr: white;
+  --accent-clr: #4af78d;
+}
+
+/* Reset */
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Source Code Pro", monospace;
+
+  display: grid;
+  place-content: center;
+  background-color: var(--bg-clr);
+  color: var(--text-clr);
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Styles */
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+main {
+  padding: 2rem;
+  box-shadow: 0.5rem 0.5rem 2.1875rem 0rem rgb(0 0 0 / 0.75);
+  border-radius: var(--border-radius);
+  max-width: calc(100vw - 3rem);
+}
+
+.form input[type="text"],
+.form p {
+  background-color: var(--terminal-clr);
+  width: 100%;
+}
+
+.form input[type="text"] {
+  margin: 0.625rem 0 0;
+  padding: 0.625rem;
+  color: var(--text-clr);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.form p {
+  min-height: 1.25rem;
+  color: var(--accent-clr);
+  padding: 0 0.625rem 0.625rem;
+  margin-block: 0;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.form div {
+  display: grid;
+  grid-template-columns: 1fr 1.875rem;
+  margin-top: 0.625rem;
+}
+
+.form div input[type="range"] {
+  appearance: none;
+  border-radius: var(--border-radius);
+  background-color: var(--terminal-clr);
+  margin: 0;
+  padding: 0 0.3125rem;
+  min-height: 1.25rem;
+}
+
+.form input[type="range"]::-webkit-slider-thumb {
+  cursor: pointer;
+  appearance: none;
+  background-color: white;
+  border-radius: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
+}
+
+.form div output {
+  text-align: right;
+}

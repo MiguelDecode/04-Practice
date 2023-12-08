@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cesar Cipher</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JavaScript -->
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Cipher Cesar</h1>
+      <form class="form" id="cipher" autocomplete="off">
+        <input
+          id="cipher-input"
+          spellcheck="false"
+          placeholder="Insert your text"
+          type="text"
+          name="text"
+        />
+
+        <p id="cipher-result"></p>
+
+        <div>
+          <input id="cipher-range" type="range" value="10" min="1" max="20" />
+          <output id="cipher-output">10</output>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
