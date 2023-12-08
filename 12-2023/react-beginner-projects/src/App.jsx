@@ -1,6 +1,7 @@
 import "./App.css";
 import Accordion from "./Components/Accordion";
 import Carrousel from "./Components/Carrousel";
+import Quotes from "./Components/Quotes";
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
       <Carrousel />
       <hr />
       <Accordion />
+      <hr />
+      <Quotes />
     </>
   );
 }

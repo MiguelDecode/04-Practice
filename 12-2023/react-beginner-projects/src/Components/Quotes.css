@@ -1,0 +1,21 @@
+.quotes {
+  margin-top: 6.25rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid gray;
+  padding: 2.5rem 5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  color: #1b1b1b;
+  max-width: fit-content;
+  margin-inline: auto;
+
+  & blockquote {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  & p{
+    font-style: italic;
+  }
+}
