@@ -5,6 +5,14 @@ import { EventosES6, EventosES7, MasSobreEventos } from "./components/Eventos";
 import Padre from "./components/ComunicacionComponentes";
 import CicloVida from "./components/CicloVida";
 import AjaxApis from "./components/AjaxApis";
+import Contador from "./components/Contador";
+// import ScrollHooks from "./components/ScrollHooks";
+import RelojHooks from "./components/RelojHooks";
+import AjaxHooks from "./components/AjaxHooks";
+import CustomHooks from "./components/CustomHooks";
+import Referencias from "./components/Referencias";
+import Formularios from "./components/Formularios";
+import Estilos from "./components/Estilos";
 
 function App() {
   return (
@@ -34,6 +42,23 @@ function App() {
         <CicloVida />
         <hr />
         <AjaxApis />
+        <hr />
+        <Contador title="seguidores" />
+        <hr />
+        <h2>Contenido no visible</h2>
+        {/* <ScrollHooks /> */}
+        <hr />
+        <RelojHooks />
+        <hr />
+        <AjaxHooks />
+        <hr />
+        <CustomHooks />
+        <hr />
+        <Referencias />
+        <hr />
+        <Formularios />
+        <hr />
+        <Estilos />
       </section>
     </>
   );
