@@ -59,6 +59,7 @@ function App() {
         <Formularios />
         <hr />
         <Estilos />
+        <hr />
       </section>
     </>
   );
