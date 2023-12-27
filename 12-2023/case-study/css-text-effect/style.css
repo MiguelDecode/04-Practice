@@ -1,0 +1,66 @@
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  background-color: #999;
+  overflow: hidden;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  height: 22.50em;
+  width: 50em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+h1 {
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+  font-size: 15rem;
+  color: #000000;
+  line-height: 1;
+  cursor: pointer;
+}
+
+img {
+  position: absolute;
+  width: 43em;
+  transform: translate(30%, -80%) rotate(0);
+  left: 50%;
+  top: 50%;
+  transition: 1s;
+  opacity: 0;
+}
+
+.container:hover img {
+  opacity: 1;
+  transform: translate(-50%, -80%) rotate(-20deg);
+}
+
+h1:nth-child(3) {
+  color: transparent;
+  -webkit-text-stroke: 4px #000000;
+}
