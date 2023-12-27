@@ -50,7 +50,7 @@ const CrudApp = () => {
 
   return (
     <>
-      <h2>CRUD App</h2>
+      <h2>CRUD App con datos en local</h2>
       <article className="grid-1-2">
         <CrudForm
           createData={createData}
