@@ -6,6 +6,8 @@ const toLowerCase = (string) => string.toLowerCase();
 const splitByCharacter = (string, character) => string.split(character);
 
 const countWordsMessage = () => {
+
+
   const msg = toLowerCase(message);
   const arr = splitByCharacter(msg, " ");
 
