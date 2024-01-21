@@ -49,7 +49,7 @@ body {
 }
 
 .roller {
-  max-width: 30rem;
+  max-width: 35rem;
   background-color: #fff;
   display: flex;
   flex-direction: column;

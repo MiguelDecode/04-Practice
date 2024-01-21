@@ -34,7 +34,6 @@ const addDice = (event) => {
   const dice = event.target.id;
   const sides = Number(dice.replace("d", ""));
   dices.push(sides);
-  console.log(dices);
   drawDice(dice);
 };
 
@@ -42,7 +41,6 @@ const deleteDice = (event) => {
   if (!event.target.matches(".dice")) return;
 
   event.target.remove();
-  // todo Borrar del array de dados
 };
 
 const resetGame = () => {
